@@ -1,0 +1,12 @@
+002
+
+Parameters([('strainmax', <Parameter 'strainmax', value=0.010338974326850121 +/- 4.01e-05, bounds=[0.004:0.02]>), ('straindepth', <Parameter 'straindepth', value=5925.9959587231851 +/- 58.6, bounds=[-inf:inf]>), ('scale', <Parameter 'scale', value=0.0007561892024690888 +/- 2.71e-05, bounds=[0.0001:0.005]>), ('thetaoffset', <Parameter 'thetaoffset', value=0.0072608882909874772 +/- 0.000103, bounds=[-inf:0.02]>)])
+
+001
+
+Parameters([('strainmax', <Parameter 'strainmax', value=0.0093728539093823286 +/- 5.99e-05, bounds=[0.004:0.02]>), ('straindepth', <Parameter 'straindepth', value=6139.0154544846346 +/- 107, bounds=[-inf:inf]>), ('scale', <Parameter 'scale', value=0.00071000596713956417 +/- 4.04e-05, bounds=[0.0001:0.005]>), ('thetaoffset', <Parameter 'thetaoffset', value=0.0082496848764745945 +/- 5.17e-05, bounds=[-inf:0.02]>)])
+
+
+fit
+
+Parameters([('strainmax', <Parameter 'strainmax', value=0.01056567093377651 +/- 3.56e-05, bounds=[0.004:0.02]>), ('straindepth', <Parameter 'straindepth', value=6280.8729627991706 +/- 54.7, bounds=[-inf:inf]>), ('scale', <Parameter 'scale', value=0.0049999999999993357 +/- 0.0319, bounds=[0.0001:0.005]>), ('thetaoffset', <Parameter 'thetaoffset', value=-0.0011327535132914512 +/- 0.000264, bounds=[-inf:0.02]>), ('m', <Parameter 'm', value=5.3374995392589433e-06 +/- 5.57e-07, bounds=[-inf:inf]>)])
