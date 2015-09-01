@@ -9,4 +9,30 @@ Parameters([('strainmax', <Parameter 'strainmax', value=0.0093728539093823286 +/
 
 fit
 
-Parameters([('strainmax', <Parameter 'strainmax', value=0.01056567093377651 +/- 3.56e-05, bounds=[0.004:0.02]>), ('straindepth', <Parameter 'straindepth', value=6280.8729627991706 +/- 54.7, bounds=[-inf:inf]>), ('scale', <Parameter 'scale', value=0.0049999999999993357 +/- 0.0319, bounds=[0.0001:0.005]>), ('thetaoffset', <Parameter 'thetaoffset', value=-0.0011327535132914512 +/- 0.000264, bounds=[-inf:0.02]>), ('m', <Parameter 'm', value=5.3374995392589433e-06 +/- 5.57e-07, bounds=[-inf:inf]>)])
+Parameters([('strainmax', <Parameter 'strainmax', value=0.011420097955606938 +/- 1.93e-05, bounds=[0.004:0.02]>), ('straindepth', <Parameter 'straindepth', value=10330.182244236472 +/- 40.6, bounds=[-inf:inf]>), ('scale', <Parameter 'scale', value=2.3485663381708139 +/- 0.121, bounds=[0.0001:10]>), ('thetaoffset', <Parameter 'thetaoffset', value=-0.068449471171223353 +/- 0.000819, bounds=[-inf:0.02]>), ('m', <Parameter 'm', value=0.00044897034007040687 +/- 2.39e-05, bounds=[-inf:inf]>)])
+Invalid identifier 'strainmax=0.011438105197662581\nstraindepth=10513.736256767601\nscale=0.099955374073621164\nthetaoffset=-0.0684620793198083\nm=3.0724729944677815e-06'
+
+
+
+fit with all data
+
+Parameters([('strainmax', <Parameter 'strainmax', value=0.011423522689800361 +/- 5.16e-06, bounds=[0.004:0.02]>), ('straindepth', <Parameter 'straindepth', value=10333.260937547546 +/- 10.6, bounds=[-inf:inf]>), ('scale', <Parameter 'scale', value=1.9996547379290535 +/- 0.0265, bounds=[0.0001:10]>), ('thetaoffset', <Parameter 'thetaoffset', value=-0.068374122229889256 +/- 0.000219, bounds=[-inf:0.02]>), ('m', <Parameter 'm', value=0.00037979104292197959 +/- 5.22e-06, bounds=[-inf:inf]>)])
+1.13986561184 residual
+
+
+Parameters([('strainmax', <Parameter 'strainmax', value=0.010622927337628561 +/- 7.25e-05, bounds=[0.004:0.02]>), ('straindepth', <Parameter 'straindepth', value=17131.697786440764 +/- 135, bounds=[-inf:inf]>), ('scale', <Parameter 'scale', value=2.5027623613714831 +/- 0.161, bounds=[0.0001:10]>), ('thetaoffset', <Parameter 'thetaoffset', value=-0.034751499371097339 +/- 0.00337, bounds=[-inf:0.02]>), ('m', <Parameter 'm', value=0.00047499550311312324 +/- 3.17e-05, bounds=[-inf:inf]>)])
+0.134484840761 residual #not all data
+
+
+
+Parameters([('strainmax', <Parameter 'strainmax', value=0.010690756089223531 +/- 1.25e-05, bounds=[0.004:0.02]>), ('straindepth', <Parameter 'straindepth', value=12782.232086379723 +/- 19.2, bounds=[-inf:inf]>), ('scale', <Parameter 'scale', value=2.3231731546763363 +/- 0.0285, bounds=[0.0001:10]>), ('thetaoffset', <Parameter 'thetaoffset', value=-0.034124046505436878 +/- 0.000571, bounds=[-inf:0.02]>), ('m', <Parameter 'm', value=0.00044162107735517105 +/- 5.61e-06, bounds=[-inf:inf]>)])
+1.34497022943 residual
+
+Parameters([('strainmax', <Parameter 'strainmax', value=0.011002851175998713 +/- 5.57e-06, bounds=[0.004:0.02]>), ('straindepth', <Parameter 'straindepth', value=11764.307691038071 +/- 13.3, bounds=[-inf:inf]>), ('scale', <Parameter 'scale', value=2.2332758160995803 +/- 0.0276, bounds=[0.0001:10]>), ('thetaoffset', <Parameter 'thetaoffset', value=-0.045653592971535373 +/- 0.000253, bounds=[-inf:0.02]>), ('m', <Parameter 'm', value=0.00042483009761739096 +/- 5.43e-06, bounds=[-inf:inf]>)])
+Invalid identifier '\nstrainmax=0.011423522689800361\nstraindepth=10333.260937547546\nscale=1.9996547379290535\nthetaoffset=-0.068374122229889256\nm=0.00037979104292197959'
+1.25841937863
+
+
+
+Parameters([('strainmax', <Parameter 'strainmax', value=0.011289426424797879 +/- 6.22e-06, bounds=[0.004:0.02]>), ('straindepth', <Parameter 'straindepth', value=10839.928010579013 +/- 12.7, bounds=[-inf:inf]>), ('scale', <Parameter 'scale', value=2.1244386269276374 +/- 0.0277, bounds=[0.0001:10]>), ('thetaoffset', <Parameter 'thetaoffset', value=-0.054725335765947847 +/- 0.000269, bounds=[-inf:0.02]>), ('m', <Parameter 'm', value=0.00040417694224808491 +/- 5.45e-06, bounds=[-inf:inf]>)])
+1.27134576328

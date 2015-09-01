@@ -1,5 +1,5 @@
 import os
-os.chdir(os.path.expanduser("~/Desktop/reflectivity/"))
+os.chdir(os.path.expanduser("~/Desktop/reflectivity/dynXRD/"))
 import pyasf
 import reflectivity
 import sympy as sp
@@ -7,7 +7,7 @@ import pylab as pl
 import numpy as np
 
 
-data = pl.loadtxt("/afs/desy.de/user/s/suracefm/Desktop/reflectivity/sto_m28_ez_8_myt1_norm.dat")
+data = pl.loadtxt("sto_m28_ez_8_myt1_norm.dat")
 
 R = 0,0,2
 xmax=25

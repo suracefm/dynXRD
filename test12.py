@@ -1,11 +1,11 @@
 import os
-os.chdir(os.path.expanduser("~/Desktop/reflectivity/"))
+os.chdir(os.path.expanduser("~/Desktop/reflectivity/dynXRD/"))
 import pyasf
 import reflectivity
 import sympy as sp
 import pylab as pl
 
-data = pl.loadtxt("/afs/desy.de/user/s/suracefm/Desktop/reflectivity/test12.dat")
+data = pl.loadtxt("test12.dat")
 data[:,0] = pl.radians(data[:,0])
 #pl.ion()
 

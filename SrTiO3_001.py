@@ -1,17 +1,23 @@
 import os
-os.chdir(os.path.expanduser("~/Desktop/reflectivity/"))
+os.chdir(os.path.expanduser("~/Desktop/reflectivity/dynXRD/"))
 import pyasf
 import reflectivity
 import sympy as sp
 import pylab as pl
 import numpy as np
 
-strainmax=0.0093733191118113117
-straindepth=6138.6738956752624
-scale=0.00070996939470415984
-thetaoffset=0.0082497047492953168
+# strainmax=0.0093733191118113117
+# straindepth=6138.6738956752624
+# scale=0.00070996939470415984
+# thetaoffset=0.0082497047492953168
 
-data = pl.loadtxt("/afs/desy.de/user/s/suracefm/Desktop/reflectivity/sto_m28_ez_17_myt1_norm.dat")
+
+strainmax=0.0093986581850592325
+straindepth=7689.0431669305553
+scale=0.00079479096614269425
+thetaoffset=0.0081929889474030571
+
+data = pl.loadtxt("sto_m28_ez_17_myt1_norm.dat")
 
 R = 0,0,1
 

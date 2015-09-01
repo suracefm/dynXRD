@@ -1,5 +1,5 @@
 import os
-os.chdir(os.path.expanduser("~/Desktop/reflectivity/"))
+os.chdir(os.path.expanduser("~/Desktop/reflectivity/dynXRD"))
 import pyasf
 import reflectivity
 import sympy as sp
@@ -9,18 +9,17 @@ import lmfit
 import rexs
 
 
+strainmax=0.011423522689800361
+straindepth=10333.260937547546
+scale=1.9996547379290535
+thetaoffset=-0.068374122229889256
+m=0.00037979104292197959
 
 
-strainmax=0.012241454118647559
-straindepth=5643.8316776878273
-scale=0.077790095151511543
-thetaoffset=-0.06758816610949081
-m=0.
 
 
-
-data = rexs.tools.loaddat("/afs/desy.de/user/s/suracefm/Desktop/reflectivity/sto_m28_ez_112-404.dat")
-feff = pl.loadtxt("/afs/desy.de/user/s/suracefm/Desktop/reflectivity/s82_f1f2.dat")
+data = rexs.tools.loaddat("sto_m28_ez_112-404.dat")
+feff = pl.loadtxt("s82_f1f2.dat")
 
 R = 0,0,2
 
@@ -36,7 +35,7 @@ def my_strain_profile(strainmax, straindepth, xmax=25, npoints=501):
 #pl.plot(tvector[1:], strain[::-1])
 #pl.show()
 
-fields=data.fields[1::25]
+fields=data.fields[1::12]
 Energy=np.array([float(en) for en in fields])
 Q=data["Q"]
 
@@ -85,10 +84,10 @@ for en in Energy:
     angle=np.arcsin(Q*12398/(4*np.pi*en))
     angle_matrix.append(angle)
     XR=crystal.calc_reflectivity(angle+thetaoffset*np.pi/180, en)
-    crystal.print_values(angle, en)
+    #crystal.print_values(angle, en)
     XR_matrix.append(XR)
     pl.plot(angle*180/np.pi+thetaoffset, abs(XR)**2)
-    pl.plot(angle*180/np.pi+thetaoffset, scale*data[str(en)]+m*en)
+    pl.plot(angle*180/np.pi+thetaoffset, (scale-m*en)*data[str(en)])
     pl.yscale('log')
     pl.show()
 
@@ -110,38 +109,41 @@ angle_matrix = np.array(angle_matrix)
 
 #pl.show()
 
-
-
-def residual(params, Energy, data, Q):
-    strainmax = params['strainmax'].value
-    straindepth = params['straindepth'].value
-    scale = params['scale'].value
-    m = params['m'].value
-    thetaoffset = params['thetaoffset'].value
-    
-    
-    
-    c = layer1.strain.keys()[0]
-    tvector, strain = my_strain_profile(strainmax, straindepth)
-    layer1.strain[c] = strain
-    layer1.thickness=tvector
-    res=[]
-    for en in Energy:
-        crystal.calc_g0_gH(en)
-        #thBragg= float(Sub.calc_Bragg_angle(en).subs(Sub.structure.subs).evalf())
-        angle=np.arcsin(Q*12398/(4*np.pi*en))
-        XR=crystal.calc_reflectivity(angle+thetaoffset*np.pi/180, en)
-        err=scale*data[str(en)]+m*en-abs(XR)**2
-        res.append(err)
-    res=np.concatenate(res)
-    print (res**2).sum()
-    return res
-
+# 
+# 
+# def residual(params, Energy, data, Q):
+#     strainmax = params['strainmax'].value
+#     straindepth = params['straindepth'].value
+#     scale = params['scale'].value
+#     m = params['m'].value
+#     thetaoffset = params['thetaoffset'].value
+#     
+#     
+#     
+#     c = layer1.strain.keys()[0]
+#     tvector, strain = my_strain_profile(strainmax, straindepth)
+#     layer1.strain[c] = strain
+#     layer1.thickness=tvector
+#     res=[]
+#     for en in Energy:
+#         crystal.calc_g0_gH(en)
+#         #thBragg= float(Sub.calc_Bragg_angle(en).subs(Sub.structure.subs).evalf())
+#         angle=np.arcsin(Q*12398/(4*np.pi*en))
+#         XR=crystal.calc_reflectivity(angle+thetaoffset*np.pi/180, en)
+#         err=(scale-m*en)*data[str(en)]-abs(XR)**2
+#         res.append(err)
+#     res=np.concatenate(res)
+#     print (res**2).sum()
+#     return res
+# 
 params = lmfit.Parameters()
 params.add('strainmax', value=strainmax, min=0.004, max=0.02)
 params.add('straindepth', value=straindepth)
-params.add('scale', value=scale, min=1e-4, max=1e-1)
-params.add('thetaoffset', value=thetaoffset, max=0.02)
+params.add('scale', value=scale)
+params.add('thetaoffset', value=thetaoffset, max=0.0001, min=-0.1)
 params.add('m', value=m)
-
-out = lmfit.minimize(residual, params, args=(Energy, data, Q))
+# 
+# residual(params, Energy, data, Q)
+# 
+# out = lmfit.minimize(residual, params, args=(Energy, data, Q))
+print params

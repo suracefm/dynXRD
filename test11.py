@@ -1,11 +1,11 @@
 import os
-os.chdir(os.path.expanduser("~/Desktop/reflectivity/"))
+os.chdir(os.path.expanduser("~/Desktop/reflectivity/dynXRD/"))
 import pyasf
 import reflectivity
 import sympy as sp
 import pylab as pl
 
-data = pl.loadtxt("/afs/desy.de/user/s/suracefm/Desktop/reflectivity/test11.dat")
+data = pl.loadtxt("test11.dat")
 data[:,0] = pl.radians(data[:,0])
 #pl.ion()
 
@@ -14,7 +14,7 @@ thickness=1000
 Energy=10000
 
 #struct = pyasf.unit_cell("1521772")
-struct = pyasf.unit_cell("/afs/desy.de/user/s/suracefm/Desktop/reflectivity/cif/LiNbO3_28294.cif") #Li Nb O3
+struct = pyasf.unit_cell("cif/LiNbO3_28294.cif") #Li Nb O3
 Sub=reflectivity.Substrate(struct)
 v_par=sp.Matrix([-1,1,4])#1,0,2
 v_perp=sp.Matrix([1,1,0]) #1,2,0
@@ -24,14 +24,18 @@ layer1=reflectivity.Epitaxial_Layer(struct, thickness)
 layer1.calc_orientation(v_par, v_perp)
 crystal=reflectivity.Sample(Sub, layer1)
 crystal.set_Miller(R)
-#crystal.calc_layer_Miller()
 crystal.calc_g0_gH(Energy)
 thBragg= float(layer1.calc_Bragg_angle(Energy).subs(layer1.structure.subs).evalf())
 angle=pl.linspace(0.995, 1.005,501)*thBragg
 
-XRl = layer1.calc_reflection_amplitude(angle, Energy)
-XRs = Sub.calc_reflection_amplitude(angle, Energy)
-XT = layer1.calc_transmission_amplitude(angle, Energy)
+
+crystal.calc_reflectivity(angle, Energy)
+layer1.calc_amplitudes(angle, Energy)
+Sub.calc_amplitudes(angle, Energy)
+
+XRl = layer1.XR
+XRs = Sub.XR
+XT = layer1.XT
 
 crystal.print_values(angle, Energy)
 

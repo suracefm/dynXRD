@@ -1,5 +1,5 @@
 import os
-os.chdir(os.path.expanduser("~/Desktop/reflectivity/"))
+os.chdir(os.path.expanduser("~/Desktop/reflectivity/dynXRD/"))
 import pyasf
 import reflectivity
 import sympy as sp
