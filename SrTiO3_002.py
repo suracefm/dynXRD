@@ -13,6 +13,16 @@ straindepth=5925.9959587231851
 scale=0.0007561892024690888
 thetaoffset=0.0072608882909874772
 
+# strainmax=0.010214814368263415 #gaussian
+# straindepth=6666.7569700496733
+# scale=0.00043979920675453233
+# thetaoffset=0.0083924870611093993
+
+# strainmax=0.010277496963932327
+# straindepth=6637.1261811733111
+# scale=0.00085304866780904886
+# thetaoffset=0.0084925890283824579 
+
 data = pl.loadtxt("sto_m28_ez_8_myt1_norm.dat")
 
 R = 0,0,2
@@ -23,7 +33,18 @@ def my_strain_profile(strainmax, straindepth, xmax=25, npoints=501):
     strain=np.delete(strain, 0)
     return x*straindepth, strain
 
+# def my_strain_profile(strainmax, straindepth, xmax=25, npoints=501): #gaussian
+#     x=np.linspace(0, xmax, 501)
+#     strain=(strainmax*np.exp(-x**2))[::-1]
+#     strain=np.delete(strain, 0)
+#     return x*straindepth, strain
 
+
+# def my_strain_profile(strainmax, straindepth, xmax=25, npoints=501): #lorentzian
+#     x=np.linspace(0, xmax, 501)
+#     strain=(strainmax/(1+x**2))[::-1]
+#     strain=np.delete(strain, 0)
+#     return x*straindepth, strain
 
 
 #pl.plot(tvector[1:], strain[::-1])
@@ -78,11 +99,14 @@ crystal.print_values(angle, Energy)
 
 #pl.plot(angle*180/np.pi,abs(Sub.XR)**2)
 
-pl.plot(data[:,0],abs(XR)**2)
+pl.plot(data[:,0],abs(XR)**2, color='black', label='calculated')
 
-pl.plot(data[:,0]+thetaoffset, data[:,1]*scale)
+pl.plot(data[:,0]+thetaoffset, data[:,1]*scale, color='red', label='measured')
 
 pl.yscale('log')
+pl.rc('font', size=11)
+pl.legend(loc="upper left")
+pl.savefig('pics/SrTiO3_2.eps')
 
 pl.show()
 
@@ -110,4 +134,4 @@ params.add('straindepth', value=straindepth)
 params.add('scale', value=scale, min=1e-4, max=5e-3)
 params.add('thetaoffset', value=thetaoffset, max=0.02)
 
-out = lmfit.minimize(residual, params, args=(angle, data[:,1]))
+#out = lmfit.minimize(residual, params, args=(angle, data[:,1]))

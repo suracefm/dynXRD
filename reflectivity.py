@@ -27,8 +27,6 @@ class Sample(object):
             layer.g0=self.substrate.g0
             layer.gH=self.substrate.gH
     
-    def add_Layer(self, Layer):
-        self.Layers.append(Layer)
         
     def calc_theta_layer(self):
         theta=sp.Symbol("theta")

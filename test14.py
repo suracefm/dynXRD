@@ -6,7 +6,7 @@ import sympy as sp
 import pylab as pl
 
 data = pl.loadtxt("test14.dat")
-data[:,0] = pl.radians(data[:,0])
+#data[:,0] = pl.radians(data[:,0])
 #pl.ion()
 
 R = 0,0,2
@@ -30,7 +30,7 @@ crystal=reflectivity.Sample(Sub, layer1)
 crystal.set_Miller(R)
 crystal.calc_g0_gH(Energy)
 thBragg= float(Sub.calc_Bragg_angle(Energy).subs(Sub.structure.subs).evalf())
-angle=pl.linspace(0.993, 1.007,501)*thBragg
+angle=pl.linspace(0.987, 1.013,501)*thBragg
 
 #XRl = layer1.calc_reflection_amplitude(angle, Energy)
 #XRs = Sub.calc_reflection_amplitude(angle, Energy)
@@ -38,12 +38,20 @@ angle=pl.linspace(0.993, 1.007,501)*thBragg
 XR=crystal.calc_reflectivity(angle, Energy)
 crystal.print_values(angle, Energy)
 
-pl.plot(data[:,0], data[:,1])
+pl.plot(data[:,0], data[:,1] , label='GID_sl', color='red')
 # pl.plot(angle-thBragg,abs(XT)**2)
 # pl.plot(angle-thBragg,abs(XRl)**2)
 # pl.plot(angle-thBragg,1 - abs(XT)**2 - abs(XRl)**2)
-pl.plot(angle-thBragg,abs(XR)**2)
+pl.plot(pl.degrees(angle-thBragg),abs(XR)**2, label='dynXRD', color='black')
 #pl.plot(angle-thBragg,abs(XRs)**2)
 #pl.plot(angle-thBragg,abs(XRl)**2)
 pl.yscale('log')
+pl.xlabel('Angle (degrees)')
+pl.ylabel('Reflectivity')
+pl.xlim(-0.2,0.2)
+pl.rc('font', size=18)
+pl.legend(loc="upper left", prop={'size':19})
+pl.locator_params(axis = 'x', nbins=4)
+
+pl.savefig('pics/test14.eps')
 pl.show()

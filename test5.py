@@ -6,7 +6,7 @@ import sympy as sp
 import pylab as pl
 
 data = pl.loadtxt("test5.dat")
-data[:,0] = pl.radians(data[:,0])
+#data[:,0] = pl.radians(data[:,0])
 #pl.ion()
 
 R = 0,2,2
@@ -25,7 +25,7 @@ crystal=reflectivity.Sample(Sub, layer1)
 crystal.set_Miller(R)
 crystal.calc_g0_gH(Energy)
 thBragg= float(layer1.calc_Bragg_angle(Energy).subs(layer1.structure.subs).evalf())
-angle=pl.linspace(0.995, 1.005,501)*thBragg
+angle=pl.linspace(0.99, 1.01,501)*thBragg
 
 crystal.calc_reflectivity(angle, Energy)
 layer1.calc_amplitudes(angle, Energy)
@@ -39,8 +39,14 @@ XT = layer1.XT
 crystal.print_values(angle, Energy)
 
 pl.plot(data[:,0], data[:,1])
-pl.plot(angle-thBragg,abs(XT)**2)
-pl.plot(angle-thBragg,abs(XRl)**2)
-pl.plot(angle-thBragg,1 - abs(XT)**2 - abs(XRl)**2)
+# pl.plot(angle-thBragg,abs(XT)**2)
+pl.plot(pl.degrees(angle-thBragg),abs(XRl)**2)
+# pl.plot(angle-thBragg,1 - abs(XT)**2 - abs(XRl)**2)
+
+
+pl.xlabel('Angle (degrees)')
+pl.ylabel('Reflectivity')
+pl.xlim(-0.2,0.2)
+pl.ylim(1e-9, 1e-2)
 pl.yscale('log')
 pl.show()

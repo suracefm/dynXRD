@@ -1,3 +1,6 @@
+from mpl_toolkits.mplot3d import Axes3D
+from matplotlib import cm
+from matplotlib.ticker import LinearLocator, FormatStrFormatter
 import os
 os.chdir(os.path.expanduser("~/Desktop/reflectivity/dynXRD"))
 import pyasf
@@ -14,7 +17,6 @@ straindepth=10333.260937547546
 scale=1.9996547379290535
 thetaoffset=-0.068374122229889256
 m=0.00037979104292197959
-
 
 
 
@@ -35,7 +37,7 @@ def my_strain_profile(strainmax, straindepth, xmax=25, npoints=501):
 #pl.plot(tvector[1:], strain[::-1])
 #pl.show()
 
-fields=data.fields[1::12]
+fields=data.fields[1::40]
 Energy=np.array([float(en) for en in fields])
 Q=data["Q"]
 
@@ -77,6 +79,7 @@ crystal.set_Miller(R)
 
 XR_matrix = []
 angle_matrix=[]
+refl_matrix_data = []
 
 for en in Energy:
     crystal.calc_g0_gH(en)
@@ -86,15 +89,22 @@ for en in Energy:
     XR=crystal.calc_reflectivity(angle+thetaoffset*np.pi/180, en)
     #crystal.print_values(angle, en)
     XR_matrix.append(XR)
-    pl.plot(angle*180/np.pi+thetaoffset, abs(XR)**2)
-    pl.plot(angle*180/np.pi+thetaoffset, (scale-m*en)*data[str(en)])
+    refl_matrix_data.append((scale-m*en)*data[str(en)])
+    pl.plot(angle*180/np.pi+thetaoffset, abs(XR)**2, color='black', label='calculated')
+    pl.plot(angle*180/np.pi+thetaoffset, (scale-m*en)*data[str(en)], color='red', label='measured')
+    pl.rc('font', size=18)
+    pl.legend(loc="lower left", title='Energy='+str(en)+' eV', prop={'size':19})
+    lim1=(angle*180/np.pi+thetaoffset)[0]
+    lim2=(angle*180/np.pi+thetaoffset)[-1]
+    pl.xlim(lim1, lim2)
+    pl.ylim(1e-4, 2e-1)
     pl.yscale('log')
+    
+    pl.savefig('pics/SrTiO3_'+str(int(en))+'.eps')
     pl.show()
 
 XR_matrix = np.array(XR_matrix)
 angle_matrix = np.array(angle_matrix)
-
-
 
 
 #pl.plot(angle*180/np.pi,abs(layer1.XR)**2)
@@ -109,41 +119,47 @@ angle_matrix = np.array(angle_matrix)
 
 #pl.show()
 
-# 
-# 
-# def residual(params, Energy, data, Q):
-#     strainmax = params['strainmax'].value
-#     straindepth = params['straindepth'].value
-#     scale = params['scale'].value
-#     m = params['m'].value
-#     thetaoffset = params['thetaoffset'].value
-#     
-#     
-#     
-#     c = layer1.strain.keys()[0]
-#     tvector, strain = my_strain_profile(strainmax, straindepth)
-#     layer1.strain[c] = strain
-#     layer1.thickness=tvector
-#     res=[]
-#     for en in Energy:
-#         crystal.calc_g0_gH(en)
-#         #thBragg= float(Sub.calc_Bragg_angle(en).subs(Sub.structure.subs).evalf())
-#         angle=np.arcsin(Q*12398/(4*np.pi*en))
-#         XR=crystal.calc_reflectivity(angle+thetaoffset*np.pi/180, en)
-#         err=(scale-m*en)*data[str(en)]-abs(XR)**2
-#         res.append(err)
-#     res=np.concatenate(res)
-#     print (res**2).sum()
-#     return res
-# 
+
+
+def residual(params, Energy, data, Q):
+    strainmax = params['strainmax'].value
+    straindepth = params['straindepth'].value
+    scale = params['scale'].value
+    m = params['m'].value
+    thetaoffset = params['thetaoffset'].value
+    
+    
+    
+    c = layer1.strain.keys()[0]
+    tvector, strain = my_strain_profile(strainmax, straindepth)
+    layer1.strain[c] = strain
+    layer1.thickness=tvector
+    res=[]
+    for en in Energy:
+        crystal.calc_g0_gH(en)
+        #thBragg= float(Sub.calc_Bragg_angle(en).subs(Sub.structure.subs).evalf())
+        angle=np.arcsin(Q*12398/(4*np.pi*en))
+        XR=crystal.calc_reflectivity(angle+thetaoffset*np.pi/180, en)
+        err=(scale-m*en)*data[str(en)]-abs(XR)**2
+        res.append(err)
+    res=np.concatenate(res)
+    print (res**2).sum()
+    return res
+
 params = lmfit.Parameters()
 params.add('strainmax', value=strainmax, min=0.004, max=0.02)
 params.add('straindepth', value=straindepth)
 params.add('scale', value=scale)
 params.add('thetaoffset', value=thetaoffset, max=0.0001, min=-0.1)
 params.add('m', value=m)
-# 
-# residual(params, Energy, data, Q)
-# 
-# out = lmfit.minimize(residual, params, args=(Energy, data, Q))
+
+residual(params, Energy, data, Q)
+
+#out = lmfit.minimize(residual, params, args=(Energy, data, Q))
 print params
+
+# np.savetxt("SrTiO3_Q.dat", Q)
+# np.savetxt("SrTiO3_Energy.dat", Energy)
+# np.savetxt("SrTiO3_data_matrix.dat", refl_matrix_data,)
+# np.savetxt("SrTiO3_fit_matrix.dat", abs(XR_matrix)**2)
+

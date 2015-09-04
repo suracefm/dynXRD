@@ -84,7 +84,7 @@ crystal.print_values(angle, Energy)
 
 pl.plot(data[:,0],abs(XR)**2)
 
-pl.plot(data[:,0]+thetaoffset, data[:,1]*scale)
+pl.plot(data[:,0]+thetaoffset, data[:,1]*scale, '.')
 
 pl.yscale('log')
 

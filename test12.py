@@ -6,7 +6,7 @@ import sympy as sp
 import pylab as pl
 
 data = pl.loadtxt("test12.dat")
-data[:,0] = pl.radians(data[:,0])
+#data[:,0] = pl.radians(data[:,0])
 #pl.ion()
 
 R = 0,0,2
@@ -28,7 +28,7 @@ crystal=reflectivity.Sample(Sub, layer1)
 crystal.set_Miller(R)
 crystal.calc_g0_gH(Energy)
 thBragg= float(Sub.calc_Bragg_angle(Energy).subs(Sub.structure.subs).evalf())
-angle=pl.linspace(0.993, 1.007,501)*thBragg
+angle=pl.linspace(0.994, 1.006,501)*thBragg
 
 # XRl = layer1.calc_reflection_amplitude(angle, Energy)
 #XRs = Sub.calc_reflection_amplitude(angle, Energy)
@@ -39,9 +39,17 @@ XR=crystal.calc_reflectivity(angle, Energy)
 
 crystal.print_values(angle, Energy)
 
-pl.plot(*data.T)
+pl.plot(*data.T, label='GID_sl', color='red')
 #pl.plot(angle-thBragg,abs(XT)**2)
-pl.plot(angle-thBragg,abs(XR)**2)
+pl.plot(pl.degrees(angle-thBragg),abs(XR)**2, label='dynXRD', color='black')
+#pl.plot(pl.degrees(angle-thBragg),abs(Sub.XR)**2, label='dynXRD', color='blue')
 #pl.plot(angle-thBragg,1 - abs(XT)**2 - abs(XRl)**2)
 pl.yscale('log')
+pl.xlabel('Angle (degrees)')
+pl.ylabel('Reflectivity')
+pl.xlim(-0.1,0.1)
+pl.rc('font', size=18)
+pl.legend(loc="upper left", prop={'size':19})
+
+pl.savefig('pics/test12.eps')
 pl.show()
