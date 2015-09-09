@@ -28,7 +28,7 @@ crystal=reflectivity.Sample(Sub, layer1)
 crystal.set_Miller(R)
 crystal.calc_g0_gH(Energy)
 thBragg= float(Sub.calc_Bragg_angle(Energy).subs(Sub.structure.subs).evalf())
-angle=pl.linspace(0.994, 1.006,501)*thBragg
+angle=pl.linspace(0.975, 1.006,501)*thBragg
 
 # XRl = layer1.calc_reflection_amplitude(angle, Energy)
 #XRs = Sub.calc_reflection_amplitude(angle, Energy)
@@ -47,7 +47,7 @@ pl.plot(pl.degrees(angle-thBragg),abs(XR)**2, label='dynXRD', color='black')
 pl.yscale('log')
 pl.xlabel('Angle (degrees)')
 pl.ylabel('Reflectivity')
-pl.xlim(-0.1,0.1)
+pl.xlim(-0.25,0.1)
 pl.rc('font', size=18)
 pl.legend(loc="upper left", prop={'size':19})
 

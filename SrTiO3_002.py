@@ -106,6 +106,8 @@ pl.plot(data[:,0]+thetaoffset, data[:,1]*scale, color='red', label='measured')
 pl.yscale('log')
 pl.rc('font', size=11)
 pl.legend(loc="upper left")
+pl.xlabel('Theta (degrees)')
+pl.ylabel('Reflectivity')
 pl.savefig('pics/SrTiO3_2.eps')
 
 pl.show()

@@ -35,7 +35,8 @@ crystal=reflectivity.Sample(Sub, *Layers)
 crystal.set_Miller(R)
 #crystal.calc_layer_Miller()
 crystal.calc_g0_gH(Energy)
-thBragg= float(Sub.calc_Bragg_angle(Energy).subs(Sub.structure.subs).evalf())
+#thBragg= float(Sub.calc_Bragg_angle(Energy).subs(Sub.structure.subs).evalf())
+thBragg=Sub.thetaBragg
 angle=pl.linspace(0.9975, 1.0008,501)*thBragg
 
 #XRl = layer1.calc_reflection_amplitude(angle, Energy)

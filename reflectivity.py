@@ -35,7 +35,7 @@ class Sample(object):
             M=layer.structure.M
             R=layer.R
             RM = (R*M)
-            u=(RM.T.inv()*layer.Miller).normalized()
+            u=(R*M.T.inv()*layer.Miller).normalized()
             layer.u=u
             k_in_unit = self.substrate.k_in_unit(theta)
             theta_layer_expr=-sp.asin(k_in_unit.dot(u))
