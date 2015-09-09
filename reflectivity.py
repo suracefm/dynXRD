@@ -63,8 +63,8 @@ class Sample(object):
         print "Surface: ", self.substrate.v_perp
         phi=np.degrees(float(sp.acos(self.substrate.H.normalized().dot(self.substrate.w3)).subs(self.substrate.structure.subs)))
         print "Bragg plane angle to surface (degrees): ", phi
-        thetaBragg=self.substrate.calc_Bragg_angle(Energy).subs(self.substrate.structure.subs).evalf()
-        thetaBraggdegree=np.degrees(float(thetaBragg))
+        thetaBragg=self.substrate.thetaBragg
+        thetaBraggdegree=np.degrees(thetaBragg)
         print "Bragg angle (degrees): ", thetaBraggdegree
         inc_angle=np.degrees(-np.arcsin(float(self.substrate.k_in_unit(thetaBragg)[2])))
         print "Incident angle (degrees): ", inc_angle
@@ -232,6 +232,7 @@ class Substrate(Epitaxial_Layer):
     
     def calc_g0_gH(self, Energy):
         thetaBragg=self.calc_Bragg_angle(Energy).subs(self.structure.subs).evalf()
+        self.thetaBragg=float(thetaBragg)
         k_in_unit_B=self.k_in_unit(float(thetaBragg))
         k_sc_unit_B=self.k_sc_unit(float(thetaBragg))
         g0=k_in_unit_B[2]
