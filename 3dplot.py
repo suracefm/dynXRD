@@ -1,5 +1,5 @@
 import os
-os.chdir(os.path.expanduser("~/Desktop/reflectivity/dynXRD/"))
+#os.chdir(os.path.expanduser("~/Desktop/reflectivity/dynXRD/"))
 from mpl_toolkits.mplot3d import Axes3D
 from matplotlib import cm
 from matplotlib.ticker import LinearLocator, FormatStrFormatter
