@@ -164,12 +164,18 @@ class Epitaxial_Layer(object):
         F0=struct.DAFS(Energy, (0,0,0))
 
         
+        
         thetasym = sp.Symbol("theta", real=True)
-        thicknesssym=sp.Symbol("thickness", real=True, positive=True)
-        eta=(-b*(thetasym-thetaBragg)*sp.sin(2*thetaBragg)-Gamma*F0[0]*(1-b)/2)/(sp.sqrt(sp.Abs(b))*C*Gamma*sp.sqrt(FH[0]*FHc[0]))
+        thicknesssym = sp.Symbol("thickness", real=True, positive=True)
+        if not isinstance(FH, sp.numbers.Zero):
+            FH = FH[0]
+        if not isinstance(FHc, sp.numbers.Zero):
+            FHc = FHc[0]
+        eta =  (-b*(thetasym-thetaBragg) * sp.sin(2*thetaBragg) - Gamma*F0[0]*(1-b)/2) \
+             / (sp.sqrt(sp.Abs(b)) * C * Gamma * sp.sqrt(FH * FHc))
         self.eta=eta
         
-        T=sp.pi*C*Gamma*sp.sqrt(FH[0]*FHc[0])*thicknesssym/(wavelength*sp.sqrt(abs(g0*gH)))
+        T=sp.pi*C*Gamma*sp.sqrt(FH*FHc)*thicknesssym/(wavelength*sp.sqrt(abs(g0*gH))) # what is it?
 
         self.T=T
         
@@ -256,12 +262,19 @@ class Substrate(Epitaxial_Layer):
         FH=struct.DAFS(Energy, Miller)
         FHc=struct.DAFS(Energy, tuple([-i for i in Miller]))
         F0=struct.DAFS(Energy, (0,0,0))
+        F0 = F0[0]
         
-        thetasym = sp.Symbol("theta", real=True)
-        eta=(-b*(thetasym-thetaBragg)*sp.sin(2*thetaBragg)-Gamma*F0[0]*(1-b)/2)/(sp.sqrt(sp.Abs(b))*C*Gamma*sp.sqrt(FH[0]*FHc[0]))
-        etafunc = pyasf.makefunc(eta)
-        self.etafunc = etafunc
-        etaval = etafunc(theta)
+        if isinstance(FH, sp.numbers.Zero) or isinstance(FHc, sp.numbers.Zero):
+            etaval = np.zeros(len(theta), dtype=complex)
+        else:
+            FH = FH[0]
+            FHc = FHc[0]
+            thetasym = sp.Symbol("theta", real=True)
+            eta=(-b*(thetasym-thetaBragg)*sp.sin(2*thetaBragg)-Gamma*F0*(1-b)/2)/(sp.sqrt(sp.Abs(b))*C*Gamma*sp.sqrt(FH*FHc))
+            etafunc = pyasf.makefunc(eta)
+            self.etafunc = etafunc
+            etaval = etafunc(theta)
+        
         s=-np.sign(etaval.real)
         X=etaval+s*np.sqrt(etaval**2-1)
         self.etaval=etaval
