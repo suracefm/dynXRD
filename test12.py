@@ -5,20 +5,29 @@ import reflectivity
 import sympy as sp
 import pylab as pl
 #import matplotlib.pyplot as pl
+import aux_xraylib as auxfunc
+import MgO
+import xraylib
 
-#data = pl.loadtxt("test12.dat")
+data = pl.loadtxt("test12.dat")
 #data[:,0] = pl.radians(data[:,0])
 #pl.ion()
 
-R = 1,1,1
+R = 0,0,2
 thickness=1000
 Energy=10000
 
+#cryst1 = reflectivity.crystal("cif/MgO1000053.cif") #MgO
+struct1=MgO.structure_MgO()
+cryst1 = auxfunc.crystal(struct1)
+#cryst2 = reflectivity.crystal("cif/MgO1000053.cif") #MgO
+struct2=MgO.structure_MgO()
+cryst2 = auxfunc.crystal(struct2)
 
 # cryst1 = reflectivity.crystal("cif/Si2104737.cif")
 # cryst2 = reflectivity.crystal("cif/Si2104737.cif")
-cryst1 = reflectivity.crystal("Si")
-cryst2 = reflectivity.crystal("Si")
+# cryst1 = reflectivity.crystal("Si")
+# cryst2 = reflectivity.crystal("Si")
 cryst2.lattice_par_val[cryst2.a] *= 1.01 #strained layer
 Sub=reflectivity.Substrate(cryst1)
 v_par=sp.Matrix([1,0,0])
@@ -42,7 +51,7 @@ XR=crystal.calc_reflectivity(angle, Energy)
 
 crystal.print_values(angle, Energy)
 
-#pl.plot(*data.T, label='GID_sl', color='red')
+pl.plot(*data.T, label='GID_sl', color='red')
 #pl.plot(angle-thBragg,abs(XT)**2)
 pl.plot(pl.degrees(angle-thBragg),abs(XR)**2, label='dynXRD', color='black')
 #pl.plot(pl.degrees(angle-thBragg),abs(Sub.XR)**2, label='dynXRD', color='blue')
