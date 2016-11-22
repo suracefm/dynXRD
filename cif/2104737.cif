@@ -1,0 +1,301 @@
+#------------------------------------------------------------------------------
+#$Date: 2016-02-20 02:53:41 +0200 (Sat, 20 Feb 2016) $
+#$Revision: 176768 $
+#$URL: svn://www.crystallography.net/cod/cif/2/10/47/2104737.cif $
+#------------------------------------------------------------------------------
+#
+# This file is available in the Crystallography Open Database (COD),
+# http://www.crystallography.net/. The original data for this entry
+# were provided by IUCr Journals, http://journals.iucr.org/.
+#
+# The file may be used within the scientific community so long as
+# proper attribution is given to the journal article from which the
+# data were obtained.
+#
+data_2104737
+loop_
+_publ_author_name
+'Elliot, Alexander Dean'
+_publ_section_title
+;
+ Structure of pyrrhotite 5<i>C</i> (Fe~9~S~10~)
+;
+_journal_coeditor_code           KD5037
+_journal_issue                   3
+_journal_name_full               'Acta Crystallographica Section B'
+_journal_page_first              271
+_journal_page_last               279
+_journal_paper_doi               10.1107/S0108768110011845
+_journal_volume                  66
+_journal_year                    2010
+_chemical_formula_sum            Si
+_chemical_formula_weight         28.086
+_chemical_name_common            Silicon
+_chemical_name_mineral           Silicon
+_chemical_name_systematic        Silicon
+_space_group_crystal_system      cubic
+_space_group_IT_number           227
+_space_group_name_H-M_alt        'F d -3 m'
+_symmetry_space_group_name_Hall  'F 4d 2 3 -1d'
+_symmetry_space_group_name_H-M   'F d -3 m :1'
+_cell_angle_alpha                90
+_cell_angle_beta                 90
+_cell_angle_gamma                90
+_cell_formula_units_Z            8
+_cell_length_a                   5.43096(6)
+_cell_length_b                   5.43096(6)
+_cell_length_c                   5.43096(6)
+_cell_volume                     160.188(3)
+_exptl_absorpt_coefficient_mu    2.401614(79)
+_exptl_crystal_density_diffrn    2.32911(8)
+_pd_block_id                     2010-05-12T23:39|Si|A.Elliot|5Ca2
+_pd_proc_ls_profile_function
+;
+Crystallite size and strain modelled with Lorentzian and 
+Gaussian component convolutions
+Si Phase
+    CS_L(csSilicon, 730.51161`_23.03944 min =100; max =2000;)
+    Strain_L(sSilicon, 0.00374`_0.00080_LIMIT_MIN_0.0001)
+;
+_refine_ls_R_I_factor            0.06253
+_cod_data_source_file            kd5037.cif
+_cod_data_source_block           (5Ca2)_Silicon
+_cod_original_cell_volume        160.1879(53)
+_cod_database_code               2104737
+loop_
+_symmetry_equiv_pos_as_xyz
+'-x, -y, z'
+'-x, -y+1/2, z+1/2'
+'-x, -z, y'
+'-x, -z+1/2, y+1/2'
+'-x, z, -y'
+'-x, z+1/2, -y+1/2'
+'-x, y, -z'
+'-x, y+1/2, -z+1/2'
+'-x+1/4, -y+1/4, -z+1/4'
+'-x+1/4, -y-1/4, -z-1/4'
+'-x+1/4, -z+1/4, -y+1/4'
+'-x+1/4, -z-1/4, -y-1/4'
+'-x+1/4, z+1/4, y+1/4'
+'-x+1/4, z-1/4, y-1/4'
+'-x+1/4, y+1/4, z+1/4'
+'-x+1/4, y-1/4, z-1/4'
+'-x+1/2, -y, z+1/2'
+'-x+1/2, -y+1/2, z'
+'-x+1/2, -z, y+1/2'
+'-x+1/2, -z+1/2, y'
+'-x+1/2, z, -y+1/2'
+'-x+1/2, z+1/2, -y'
+'-x+1/2, y, -z+1/2'
+'-x+1/2, y+1/2, -z'
+'-x-1/4, -y+1/4, -z-1/4'
+'-x-1/4, -y-1/4, -z+1/4'
+'-x-1/4, -z+1/4, -y-1/4'
+'-x-1/4, -z-1/4, -y+1/4'
+'-x-1/4, z+1/4, y-1/4'
+'-x-1/4, z-1/4, y+1/4'
+'-x-1/4, y+1/4, z-1/4'
+'-x-1/4, y-1/4, z+1/4'
+'-y, -x, z'
+'-y, -x+1/2, z+1/2'
+'-y, -z, x'
+'-y, -z+1/2, x+1/2'
+'-y, z, -x'
+'-y, z+1/2, -x+1/2'
+'-y, x, -z'
+'-y, x+1/2, -z+1/2'
+'-y+1/4, -x+1/4, -z+1/4'
+'-y+1/4, -x-1/4, -z-1/4'
+'-y+1/4, -z+1/4, -x+1/4'
+'-y+1/4, -z-1/4, -x-1/4'
+'-y+1/4, z+1/4, x+1/4'
+'-y+1/4, z-1/4, x-1/4'
+'-y+1/4, x+1/4, z+1/4'
+'-y+1/4, x-1/4, z-1/4'
+'-y+1/2, -x, z+1/2'
+'-y+1/2, -x+1/2, z'
+'-y+1/2, -z, x+1/2'
+'-y+1/2, -z+1/2, x'
+'-y+1/2, z, -x+1/2'
+'-y+1/2, z+1/2, -x'
+'-y+1/2, x, -z+1/2'
+'-y+1/2, x+1/2, -z'
+'-y-1/4, -x+1/4, -z-1/4'
+'-y-1/4, -x-1/4, -z+1/4'
+'-y-1/4, -z+1/4, -x-1/4'
+'-y-1/4, -z-1/4, -x+1/4'
+'-y-1/4, z+1/4, x-1/4'
+'-y-1/4, z-1/4, x+1/4'
+'-y-1/4, x+1/4, z-1/4'
+'-y-1/4, x-1/4, z+1/4'
+'-z, -x, y'
+'-z, -x+1/2, y+1/2'
+'-z, -y, x'
+'-z, -y+1/2, x+1/2'
+'-z, y, -x'
+'-z, y+1/2, -x+1/2'
+'-z, x, -y'
+'-z, x+1/2, -y+1/2'
+'-z+1/4, -x+1/4, -y+1/4'
+'-z+1/4, -x-1/4, -y-1/4'
+'-z+1/4, -y+1/4, -x+1/4'
+'-z+1/4, -y-1/4, -x-1/4'
+'-z+1/4, y+1/4, x+1/4'
+'-z+1/4, y-1/4, x-1/4'
+'-z+1/4, x+1/4, y+1/4'
+'-z+1/4, x-1/4, y-1/4'
+'-z+1/2, -x, y+1/2'
+'-z+1/2, -x+1/2, y'
+'-z+1/2, -y, x+1/2'
+'-z+1/2, -y+1/2, x'
+'-z+1/2, y, -x+1/2'
+'-z+1/2, y+1/2, -x'
+'-z+1/2, x, -y+1/2'
+'-z+1/2, x+1/2, -y'
+'-z-1/4, -x+1/4, -y-1/4'
+'-z-1/4, -x-1/4, -y+1/4'
+'-z-1/4, -y+1/4, -x-1/4'
+'-z-1/4, -y-1/4, -x+1/4'
+'-z-1/4, y+1/4, x-1/4'
+'-z-1/4, y-1/4, x+1/4'
+'-z-1/4, x+1/4, y-1/4'
+'-z-1/4, x-1/4, y+1/4'
+'z, -x, -y'
+'z, -x+1/2, -y+1/2'
+'z, -y, -x'
+'z, -y+1/2, -x+1/2'
+'z, y, x'
+'z, y+1/2, x+1/2'
+'z, x, y'
+'z, x+1/2, y+1/2'
+'z+1/4, -x+1/4, y+1/4'
+'z+1/4, -x-1/4, y-1/4'
+'z+1/4, -y+1/4, x+1/4'
+'z+1/4, -y-1/4, x-1/4'
+'z+1/4, y+1/4, -x+1/4'
+'z+1/4, y-1/4, -x-1/4'
+'z+1/4, x+1/4, -y+1/4'
+'z+1/4, x-1/4, -y-1/4'
+'z+1/2, -x, -y+1/2'
+'z+1/2, -x+1/2, -y'
+'z+1/2, -y, -x+1/2'
+'z+1/2, -y+1/2, -x'
+'z+1/2, y, x+1/2'
+'z+1/2, y+1/2, x'
+'z+1/2, x, y+1/2'
+'z+1/2, x+1/2, y'
+'z-1/4, -x+1/4, y-1/4'
+'z-1/4, -x-1/4, y+1/4'
+'z-1/4, -y+1/4, x-1/4'
+'z-1/4, -y-1/4, x+1/4'
+'z-1/4, y+1/4, -x-1/4'
+'z-1/4, y-1/4, -x+1/4'
+'z-1/4, x+1/4, -y-1/4'
+'z-1/4, x-1/4, -y+1/4'
+'y, -x, -z'
+'y, -x+1/2, -z+1/2'
+'y, -z, -x'
+'y, -z+1/2, -x+1/2'
+'y, z, x'
+'y, z+1/2, x+1/2'
+'y, x, z'
+'y, x+1/2, z+1/2'
+'y+1/4, -x+1/4, z+1/4'
+'y+1/4, -x-1/4, z-1/4'
+'y+1/4, -z+1/4, x+1/4'
+'y+1/4, -z-1/4, x-1/4'
+'y+1/4, z+1/4, -x+1/4'
+'y+1/4, z-1/4, -x-1/4'
+'y+1/4, x+1/4, -z+1/4'
+'y+1/4, x-1/4, -z-1/4'
+'y+1/2, -x, -z+1/2'
+'y+1/2, -x+1/2, -z'
+'y+1/2, -z, -x+1/2'
+'y+1/2, -z+1/2, -x'
+'y+1/2, z, x+1/2'
+'y+1/2, z+1/2, x'
+'y+1/2, x, z+1/2'
+'y+1/2, x+1/2, z'
+'y-1/4, -x+1/4, z-1/4'
+'y-1/4, -x-1/4, z+1/4'
+'y-1/4, -z+1/4, x-1/4'
+'y-1/4, -z-1/4, x+1/4'
+'y-1/4, z+1/4, -x-1/4'
+'y-1/4, z-1/4, -x+1/4'
+'y-1/4, x+1/4, -z-1/4'
+'y-1/4, x-1/4, -z+1/4'
+'x, -y, -z'
+'x, -y+1/2, -z+1/2'
+'x, -z, -y'
+'x, -z+1/2, -y+1/2'
+'x, z, y'
+'x, z+1/2, y+1/2'
+'x, y, z'
+'x, y+1/2, z+1/2'
+'x+1/4, -y+1/4, z+1/4'
+'x+1/4, -y-1/4, z-1/4'
+'x+1/4, -z+1/4, y+1/4'
+'x+1/4, -z-1/4, y-1/4'
+'x+1/4, z+1/4, -y+1/4'
+'x+1/4, z-1/4, -y-1/4'
+'x+1/4, y+1/4, -z+1/4'
+'x+1/4, y-1/4, -z-1/4'
+'x+1/2, -y, -z+1/2'
+'x+1/2, -y+1/2, -z'
+'x+1/2, -z, -y+1/2'
+'x+1/2, -z+1/2, -y'
+'x+1/2, z, y+1/2'
+'x+1/2, z+1/2, y'
+'x+1/2, y, z+1/2'
+'x+1/2, y+1/2, z'
+'x-1/4, -y+1/4, z-1/4'
+'x-1/4, -y-1/4, z+1/4'
+'x-1/4, -z+1/4, y-1/4'
+'x-1/4, -z-1/4, y+1/4'
+'x-1/4, z+1/4, -y-1/4'
+'x-1/4, z-1/4, -y+1/4'
+'x-1/4, y+1/4, -z-1/4'
+'x-1/4, y-1/4, -z+1/4'
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_occupancy
+_atom_site_aniso_U_11
+_atom_site_aniso_U_22
+_atom_site_aniso_U_33
+_atom_site_aniso_U_12
+_atom_site_aniso_U_13
+_atom_site_aniso_U_23
+Si1 Si 8 0 0 0 1 0.00228(19) 0.00228(19) 0.00228(19) 0 0 0
+loop_
+_atom_type_symbol
+_atom_type_description
+_atom_type_scat_dispersion_real
+_atom_type_scat_dispersion_imag
+_atom_type_scat_source
+Si Si 14.088 0.095 'Default dataset used by TOPAS R3'
+loop_
+_citation_title
+_citation_page_first
+_citation_page_last
+_citation_year
+_citation_journal_abbrev
+_citation_journal_volume
+_citation_journal_issue
+_citation_journal_id_ISSN
+; Lattice parameters, coefficients of thermal expansion and 
+atomic weights of purest silicon and germanium
+;
+330 334 1952
+;
+;
+;
+;
+;
+;
+;
+;

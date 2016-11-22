@@ -1,46 +1,60 @@
-import pyasf
+#import pyasf
+import aux_xraylib as auxfunc
+#import aux_pyasf as auxfunc
 import numpy as np
 import sympy as sp
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
+
+# def get_crystal(element):
+#     return auxfunc.get_crystal(element)
+
+def crystal(element):
+    struct=auxfunc.get_crystal(element)
+    return auxfunc.crystal(struct)
 
 class Sample(object):
     def __init__(self, substrate, *Layers):
         self.substrate=substrate
         self.Layers=Layers
-        
+
     def set_Miller(self, Miller):
         self.substrate.set_Miller(Miller)
         self.substrate.calc_H_cartesian()
         for layer in self.Layers:
-            M=layer.structure.M
+            M=layer.structure.M_matrix
+            #M=layer.structure.M
             R=layer.R
-            RM = (R*M).subs(layer.structure.subs).evalf()
-            
+            #RM = (R*M).subs(layer.structure.subs).evalf()
+            RM=(R*M).subs(layer.structure.lattice_par_val).evalf()
+
             RS=self.substrate.R
             H=RS*self.substrate.H
-            Recq=RM.T * H.subs(self.substrate.structure.subs).evalf()
-            layer.Miller=sp.Matrix([int(round(element)) for element in Recq])
-    
+            #Recq=RM.T * H.subs(self.substrate.structure.subs).evalf()
+            Recq=RM.T * H.subs(self.substrate.structure.lattice_par_val).evalf()
+            layer.Miller=([int(round(element)) for element in Recq])
+
+
     def calc_g0_gH(self, Energy):
         self.substrate.calc_g0_gH(Energy)
         for layer in self.Layers:
             layer.g0=self.substrate.g0
             layer.gH=self.substrate.gH
-    
-        
+
+
     def calc_theta_layer(self):
         theta=sp.Symbol("theta")
         self.substrate.theta_layer_expr=theta
         for layer in self.Layers:
-            M=layer.structure.M
+            M=layer.structure.M_matrix
             R=layer.R
             RM = (R*M)
-            u=(R*M.T.inv()*layer.Miller).normalized()
+            Miller=sp.Matrix(layer.Miller)
+            u=(R*M.T.inv()*Miller).normalized()
             layer.u=u
             k_in_unit = self.substrate.k_in_unit(theta)
             theta_layer_expr=-sp.asin(k_in_unit.dot(u))
             layer.theta_layer_expr=theta_layer_expr
-            layer.theta_layer_func=pyasf.makefunc(theta_layer_expr, "numpy")
+            layer.theta_layer_func=auxfunc.makefunc(theta_layer_expr, "numpy")
 
     def calc_reflectivity(self, theta, Energy, Polarization=1):
         self.calc_theta_layer()
@@ -54,47 +68,49 @@ class Sample(object):
             Xt=(XR-X0*(XR**2-XT**2))/(1-X0*XR)
             X0=Xt
         return X0
-        
+
     def print_values(self, theta, Energy):
-        print "wavelength (A): ",12398./Energy, " Energy (eV): ", Energy
-        print "Bragg reflection: "
+        print("wavelength (A): ",12398./Energy, " Energy (eV): ", Energy)
+        print("Bragg reflection: ")
         for layer in self.Layers:
-            print layer.Miller
-        print "Surface: ", self.substrate.v_perp
-        phi=np.degrees(float(sp.acos(self.substrate.H.normalized().dot(self.substrate.w3)).subs(self.substrate.structure.subs)))
-        print "Bragg plane angle to surface (degrees): ", phi
+            print(layer.Miller)
+        print("Surface: ", self.substrate.v_perp)
+        #phi=np.degrees(float(sp.acos(self.substrate.H.normalized().dot(self.substrate.w3)).subs(self.substrate.structure.subs)))
+        phi=np.degrees(float(sp.acos(self.substrate.H.normalized().dot(self.substrate.w3)).subs(self.substrate.structure.lattice_par_val)))
+        print("Bragg plane angle to surface (degrees): ", phi)
         thetaBragg=self.substrate.thetaBragg
         thetaBraggdegree=np.degrees(thetaBragg)
-        print "Bragg angle (degrees): ", thetaBraggdegree
+        print("Bragg angle (degrees): ", thetaBraggdegree)
         inc_angle=np.degrees(-np.arcsin(float(self.substrate.k_in_unit(thetaBragg)[2])))
-        print "Incident angle (degrees): ", inc_angle
+        print("Incident angle (degrees): ", inc_angle)
         ex_angle=np.degrees(np.arcsin(float(self.substrate.k_sc_unit(thetaBragg)[2])))
-        print "Exit angle (degrees): ", ex_angle
+        print("Exit angle (degrees): ", ex_angle)
         b=self.substrate.g0/self.substrate.gH
-        print "Asymmetry factor: ", b
+        print("Asymmetry factor: ", b)
         if self.substrate.w1.dot(self.substrate.H)==0:
-            print "Symmetric"
+            print("Symmetric")
         if (self.substrate.w1.cross(self.substrate.w3)).dot(self.substrate.H.normalized())==0:
-            print "Coplanar"
-            
+            print("Coplanar")
+
 class Epitaxial_Layer(object):
     def __init__(self, structure, thickness, Miller=None, R=None, v_par=None, v_perp=None):
+        #self.structure=structure
         self.structure=structure
         self.thickness=thickness
         self.R = R
         self.Miller=Miller
         self.v_par=v_par
         self.v_perp=v_perp
-        self.S = self.structure.S
-    
+        #self.S = self.structure.S
 
-        
-    
+
+
+
     def calc_orientation(self, v_par=None, v_perp=None):
         """
             Define the Orientation Matrix of the Layer with respect to the
             sample system.
-            
+
             Inputs:
                 v_par : sequence of length 3
                     vector of the reciprocal lattice system which is pointing parallel
@@ -109,7 +125,7 @@ class Epitaxial_Layer(object):
             v_perp=self.v_perp
         self.v_par=v_par
         self.v_perp=v_perp
-        M=self.structure.M
+        M=self.structure.M_matrix
         w1=M.T.inv()*v_par/((M.T.inv()*v_par).norm())
         w3=M.T.inv()*v_perp/((M.T.inv()*v_perp).norm())
         if w1.dot(w3)!=0:
@@ -120,12 +136,12 @@ class Epitaxial_Layer(object):
         R=sp.Matrix([w1.T, w2.T, w3.T])
         self.R=R
         return R
-    
+
     def calc_orientation_from_angle(self, psi, v_perp=None):
         if v_perp==None:
             v_perp=self.v_perp
         self.v_perp=v_perp
-        M=self.structure.M
+        M=self.structure.M_matrix
         w3=M.T.inv()*v_perp/((M.T.inv()*v_perp).norm())
         self.w3=w3
         b_rec=sp.Matrix([0,1,0])
@@ -144,74 +160,88 @@ class Epitaxial_Layer(object):
         R=sp.Matrix([w1.T, w2.T, w3.T])
         self.R=R
         return R
-    
-    
+
+
     def calc_parameters(self, Energy):
         Miller=self.Miller
-        struct=self.structure
+        #struct=self.structure
+        structure=self.structure
         wavelength=12398./Energy
-        Volume=struct.V
+        #Volume=struct.V
+        Volume=structure.volume
         r_e=2.818e-5
         Gamma=r_e*wavelength**2/(sp.pi*Volume)
         g0=self.g0
         gH=self.gH
         b=g0/gH
         C=1
-        
-        thetaBragg=self.calc_Bragg_angle(Energy)
-        FH=struct.DAFS(Energy, Miller)
-        FHc=struct.DAFS(Energy, tuple([-i for i in Miller]))
-        F0=struct.DAFS(Energy, (0,0,0))
 
-        
-        
+        thetaBragg=self.calc_Bragg_angle(Energy)
+        # FH=struct.DAFS(Energy, Miller)
+        # FHc=struct.DAFS(Energy, tuple([-i for i in Miller]))
+        # F0=struct.DAFS(Energy, (0,0,0))
+        FH=self.structure.FH_structure_factor(Energy, Miller)
+        FHc=self.structure.FH_structure_factor(Energy, tuple([-i for i in Miller]))
+        F0=self.structure.FH_structure_factor(Energy, (0,0,0))
+
+
+
         thetasym = sp.Symbol("theta", real=True)
         thicknesssym = sp.Symbol("thickness", real=True, positive=True)
-        if not isinstance(FH, sp.numbers.Zero):
-            FH = FH[0]
-        if not isinstance(FHc, sp.numbers.Zero):
-            FHc = FHc[0]
-        eta =  (-b*(thetasym-thetaBragg) * sp.sin(2*thetaBragg) - Gamma*F0[0]*(1-b)/2) \
+        # if not isinstance(FH, sp.numbers.Zero):
+        #     FH = FH[0]
+        # if not isinstance(FHc, sp.numbers.Zero):
+        #     FHc = FHc[0]
+        eta =  (-b*(thetasym-thetaBragg) * sp.sin(2*thetaBragg) - Gamma*F0*(1-b)/2) \
              / (sp.sqrt(sp.Abs(b)) * C * Gamma * sp.sqrt(FH * FHc))
         self.eta=eta
-        
+
         T=sp.pi*C*Gamma*sp.sqrt(FH*FHc)*thicknesssym/(wavelength*sp.sqrt(abs(g0*gH))) # what is it?
 
         self.T=T
-        
+
         alpha=T*sp.sqrt(eta**2-1)
         Q=sp.sqrt(eta**2-1)*sp.cos(alpha)+sp.I*eta*sp.sin(alpha)
         self.alpha=alpha
         self.Q=Q
-        
+
     def calc_amplitudes(self, theta, Energy):
-        theta_layer_sub=self.theta_layer_func.dictcall(dict(theta=theta, **self.structure.subs))
+        #theta_layer_sub=self.theta_layer_func.dictcall(dict(theta=theta, **self.structure.subs))
+        thissubs=self.structure.lattice_par_val.copy()
+        thissubs['theta']=theta
+        thissubs['thickness']=self.thickness
+        theta_layer_sub=self.theta_layer_func.dictcall(thissubs)
         self.calc_parameters(Energy)
         alpha=self.alpha
         eta=self.eta
         Q=self.Q
-        XR = pyasf.makefunc(sp.I*sp.sin(alpha)/Q, "numpy")
-        XT=pyasf.makefunc(sp.sqrt(eta**2-1)/Q, "numpy")
-        thissubs=dict(theta=theta, thickness=self.thickness, **self.structure.subs)
+        XR = auxfunc.makefunc(sp.I*sp.sin(alpha)/Q, "numpy")
+        XT=auxfunc.makefunc(sp.sqrt(eta**2-1)/Q, "numpy")
+        #thissubs=dict(theta=theta, thickness=self.thickness, **self.structure.subs)
+        #thissubs=dict(theta=theta, thickness=self.thickness, **self.structure.lattice_par_val)
         self.XR=XR.dictcall(thissubs)
         self.XT=XT.dictcall(thissubs)
-    
+
     def calc_H_cartesian(self):
         Miller=sp.Matrix(self.Miller)
-        M=self.structure.M
+        #M=self.structure.M
+        M=self.structure.M_matrix
         H=M.T.inv()*Miller
         self.H=H
         return H
-        
+
     def calc_Bragg_angle(self, Energy, Miller=None):
         if Miller == None:
             Miller = self.Miller
         wavelength=12398./Energy
-        thissubs = dict(zip(self.structure.miller, Miller))
-        Braggq= 2*sp.pi * self.structure.qfunc.dictcall(thissubs)
+        #thissubs = dict(zip(self.structure.miller, Miller))
+        self.calc_H_cartesian()
+        q=sp.sqrt(self.H.dot(self.H))
+        #Braggq= 2*sp.pi * self.structure.qfunc.dictcall(thissubs)
+        Braggq=2*sp.pi*q
         thetaBragg=sp.asin(Braggq*wavelength/(4*sp.pi))
         return thetaBragg
-        
+
     def calc_wavevectors(self):
         theta = sp.Symbol("theta", real=True)
         w1=self.w1
@@ -220,61 +250,70 @@ class Epitaxial_Layer(object):
         u=H/H.norm()
         wv=w1-(w1.dot(u))*u
         w=wv/wv.norm()
-        k_in_unit=(self.R*(-sp.sin(theta)*u+sp.cos(theta)*w)).subs(self.structure.subs).evalf()
-        k_sc_unit=(self.R*( sp.sin(theta)*u+sp.cos(theta)*w)).subs(self.structure.subs).evalf()
-        self.k_in_unit=pyasf.makefunc(k_in_unit, "sympy")
-        self.k_sc_unit=pyasf.makefunc(k_sc_unit, "sympy")
+        # k_in_unit=(self.R*(-sp.sin(theta)*u+sp.cos(theta)*w)).subs(self.structure.subs).evalf()
+        # k_sc_unit=(self.R*( sp.sin(theta)*u+sp.cos(theta)*w)).subs(self.structure.subs).evalf()
+        k_in_unit=(self.R*(-sp.sin(theta)*u+sp.cos(theta)*w)).subs(self.structure.lattice_par_val).evalf()
+        k_sc_unit=(self.R*( sp.sin(theta)*u+sp.cos(theta)*w)).subs(self.structure.lattice_par_val).evalf()
+        self.k_in_unit=auxfunc.makefunc(k_in_unit, "sympy")
+        self.k_sc_unit=auxfunc.makefunc(k_sc_unit, "sympy")
         self.q_unit=u
-        
+
 class Substrate(Epitaxial_Layer):
     def __init__(self, structure):
         super(Substrate, self).__init__(structure, np.inf)
         self.XT=0
-    
-    
+
+
     def set_Miller(self, Miller):
         self.Miller=Miller
         self.calc_wavevectors()
-    
+
     def calc_g0_gH(self, Energy):
-        thetaBragg=self.calc_Bragg_angle(Energy).subs(self.structure.subs).evalf()
+        #thetaBragg=self.calc_Bragg_angle(Energy).subs(self.structure.subs).evalf()
+        thetaBragg=self.calc_Bragg_angle(Energy).subs(self.structure.lattice_par_val).evalf()
         self.thetaBragg=float(thetaBragg)
         k_in_unit_B=self.k_in_unit(float(thetaBragg))
         k_sc_unit_B=self.k_sc_unit(float(thetaBragg))
         g0=k_in_unit_B[2]
         gH=k_sc_unit_B[2]
         self.g0=g0
-        self.gH=gH   
+        self.gH=gH
 
     def calc_amplitudes(self, theta, Energy):
         Miller=self.Miller
-        struct=self.structure
+        #struct=self.structure
+        structure=self.structure
         wavelength=12398./Energy
-        Volume=struct.V.subs(struct.subs).evalf()
+        #Volume=struct.V.subs(struct.subs).evalf()
+        Volume=structure.volume.subs(structure.lattice_par_val).evalf()
         r_e=2.818e-5
         Gamma=r_e*wavelength**2/(sp.pi*Volume)
         g0=self.g0
         gH=self.gH
         b=g0/gH
         C=1
-        
-        thetaBragg=self.calc_Bragg_angle(Energy).subs(struct.subs).evalf()
-        FH=struct.DAFS(Energy, Miller)
-        FHc=struct.DAFS(Energy, tuple([-i for i in Miller]))
-        F0=struct.DAFS(Energy, (0,0,0))
-        F0 = F0[0]
-        
+
+        #thetaBragg=self.calc_Bragg_angle(Energy).subs(struct.subs).evalf()
+        thetaBragg=self.calc_Bragg_angle(Energy).subs(structure.lattice_par_val).evalf()
+        #FH=struct.DAFS(Energy, Miller)
+        #FHc=struct.DAFS(Energy, tuple([-i for i in Miller]))
+        #F0=struct.DAFS(Energy, (0,0,0))
+        FH=self.structure.FH_structure_factor(Energy, Miller)
+        FHc=self.structure.FH_structure_factor(Energy, tuple([-i for i in Miller]))
+        F0=self.structure.FH_structure_factor(Energy, (0,0,0))
+        #F0 = F0[0]
+
         if isinstance(FH, sp.numbers.Zero) or isinstance(FHc, sp.numbers.Zero):
             etaval = np.zeros(len(theta), dtype=complex)
         else:
-            FH = FH[0]
-            FHc = FHc[0]
+            #FH = FH[0]
+            #FHc = FHc[0]
             thetasym = sp.Symbol("theta", real=True)
             eta=(-b*(thetasym-thetaBragg)*sp.sin(2*thetaBragg)-Gamma*F0*(1-b)/2)/(sp.sqrt(sp.Abs(b))*C*Gamma*sp.sqrt(FH*FHc))
-            etafunc = pyasf.makefunc(eta)
+            etafunc = auxfunc.makefunc(eta)
             self.etafunc = etafunc
             etaval = etafunc(theta)
-        
+
         s=-np.sign(etaval.real)
         X=etaval+s*np.sqrt(etaval**2-1)
         self.etaval=etaval
@@ -286,17 +325,17 @@ class Strained_Layer(Epitaxial_Layer):
             if isinstance(k, str) and hasattr(structure, k):
                 sym = getattr(structure, k)
                 strainparam[sym] = strainparam.pop(k)
-        
+
         length=len(thickness_vector)-1
         self.length=length
-        
+
         assert all([len(arr) == length for arr in strainparam.values()]), \
                 "Thickness vector and all strain parameters should be of the same length."
 
 
         self.strain = strainparam
         super(Strained_Layer, self).__init__(structure, thickness_vector)
-        
+
     def calc_amplitudes(self, theta, Energy):
         self.calc_parameters(Energy)
         Q=self.Q
@@ -305,20 +344,26 @@ class Strained_Layer(Epitaxial_Layer):
         R=self.R
         M=self.structure.M
         Miller=self.Miller
-        XR = pyasf.makefunc(sp.I*sp.sin(alpha)/Q, "numpy")
-        XT = pyasf.makefunc(sp.sqrt(eta**2-1)/Q, "numpy")
+        XR = auxfunc.makefunc(sp.I*sp.sin(alpha)/Q, "numpy")
+        XT = auxfunc.makefunc(sp.sqrt(eta**2-1)/Q, "numpy")
         XR0=0
         XT0=1
-        thissubs = self.structure.subs.copy()
+        #thissubs = self.structure.subs.copy()
+        thissubs = self.structure.lattice_par_val.copy()
         dt = np.diff(self.thickness)
         for i in xrange(self.length):
             for sym in self.strain:
-                thissubs[sym] = self.structure.subs[sym] * (self.strain[sym][i] + 1)
-            theta_layer_sub=self.theta_layer_func.dictcall(dict(theta=theta, **thissubs))
+                #thissubs[sym] = self.structure.subs[sym] * (self.strain[sym][i] + 1)
+                thissubs[sym] = self.structure.lattice_par_val[sym] * (self.strain[sym][i] + 1)
+            thissubs['theta']=theta
+            theta_layer_sub=self.theta_layer_func.dictcall(thissubs)
+            #theta_layer_sub=self.theta_layer_func.dictcall(dict(theta=theta, **thissubs))
             thickness=dt[i]
-            subs=dict(theta=theta_layer_sub,thickness=thickness, **thissubs)
-            XR1=XR.dictcall(subs)
-            XT1=XT.dictcall(subs)
+            thissubs['theta']=theta_layer_sub
+            thissubs['thickness']=thickness
+            #subs=dict(theta=theta_layer_sub,thickness=thickness, **thissubs)
+            XR1=XR.dictcall(thissubs)
+            XT1=XT.dictcall(thissubs)
             XT0*=XT1/(1-XR0*XR1)
             XR0=(XR1-XR0*(XR1**2-XT1**2))/(1-XR0*XR1)
         self.XR=XR0
