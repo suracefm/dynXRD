@@ -7,7 +7,7 @@ import pylab as pl
 #import matplotlib.pyplot as pl
 import aux_xraylib as auxfunc
 import MgO
-import xraylib
+#import xraylib
 
 data = pl.loadtxt("test12.dat")
 #data[:,0] = pl.radians(data[:,0])

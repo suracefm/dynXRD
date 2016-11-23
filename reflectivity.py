@@ -12,6 +12,11 @@ def crystal(element):
     struct=auxfunc.get_crystal(element)
     return auxfunc.crystal(struct)
 
+def normalize(vec):
+    """ Normalizes real sympy vectors """
+    norm=sp.sqrt(sp.Add(*(i**2 for i in vec)))
+    return vec/norm
+
 class Sample(object):
     def __init__(self, substrate, *Layers):
         self.substrate=substrate
@@ -31,7 +36,13 @@ class Sample(object):
             H=RS*self.substrate.H
             #Recq=RM.T * H.subs(self.substrate.structure.subs).evalf()
             Recq=RM.T * H.subs(self.substrate.structure.lattice_par_val).evalf()
-            layer.Miller=([int(round(element)) for element in Recq])
+            Hl=([int(round(element)) for element in Recq])
+            dotprod=np.array(list(map((lambda a, b: a*b), Hl, Recq)))
+            cos=np.sum(dotprod)/(np.linalg.norm(np.array(Hl))*Recq.norm())
+            #print(Recq, Hl, cos)
+            assert abs(cos-1.0)<0.0001, 'The vectors H from the substrate and the layer must be parallel'
+            layer.Miller=Hl
+
 
 
     def calc_g0_gH(self, Energy):
@@ -49,7 +60,7 @@ class Sample(object):
             R=layer.R
             RM = (R*M)
             Miller=sp.Matrix(layer.Miller)
-            u=(R*M.T.inv()*Miller).normalized()
+            u=normalize((R*M.T.inv()*Miller))
             layer.u=u
             k_in_unit = self.substrate.k_in_unit(theta)
             theta_layer_expr=-sp.asin(k_in_unit.dot(u))
@@ -70,17 +81,19 @@ class Sample(object):
         return X0
 
     def print_values(self, theta, Energy):
+        Hnorm=normalize(self.substrate.H)
         print("wavelength (A): ",12398./Energy, " Energy (eV): ", Energy)
         print("Bragg reflection: ")
         for layer in self.Layers:
             print(layer.Miller)
         print("Surface: ", self.substrate.v_perp)
-        #phi=np.degrees(float(sp.acos(self.substrate.H.normalized().dot(self.substrate.w3)).subs(self.substrate.structure.subs)))
+        #phi=np.degrees(float(sp.acos(Hnorm.dot(self.substrate.w3)).subs(self.substrate.structure.subs)))
         phi=np.degrees(float(sp.acos(self.substrate.H.normalized().dot(self.substrate.w3)).subs(self.substrate.structure.lattice_par_val)))
         print("Bragg plane angle to surface (degrees): ", phi)
         thetaBragg=self.substrate.thetaBragg
         thetaBraggdegree=np.degrees(thetaBragg)
         print("Bragg angle (degrees): ", thetaBraggdegree)
+        print(self.substrate.k_in_unit(thetaBragg)[2])
         inc_angle=np.degrees(-np.arcsin(float(self.substrate.k_in_unit(thetaBragg)[2])))
         print("Incident angle (degrees): ", inc_angle)
         ex_angle=np.degrees(np.arcsin(float(self.substrate.k_sc_unit(thetaBragg)[2])))
@@ -89,7 +102,7 @@ class Sample(object):
         print("Asymmetry factor: ", b)
         if self.substrate.w1.dot(self.substrate.H)==0:
             print("Symmetric")
-        if (self.substrate.w1.cross(self.substrate.w3)).dot(self.substrate.H.normalized())==0:
+        if (self.substrate.w1.cross(self.substrate.w3)).dot(Hnorm)==0:
             print("Coplanar")
 
 class Epitaxial_Layer(object):
@@ -151,7 +164,8 @@ class Epitaxial_Layer(object):
             c_rec=sp.Matrix([0,0,1])
             c=M.T.inv()*c_rec
             pv=w3.cross(c)
-        p=pv.normalized()
+        p=normalize(pv)
+        #p=pv.normalized() # gives complex values!
         q=p.cross(w3)
         w1=p*sp.cos(psi)+q*sp.sin(psi)
         self.w1=w1
@@ -249,7 +263,7 @@ class Epitaxial_Layer(object):
         H=self.calc_H_cartesian()
         u=H/H.norm()
         wv=w1-(w1.dot(u))*u
-        w=wv/wv.norm()
+        w=normalize(wv)
         # k_in_unit=(self.R*(-sp.sin(theta)*u+sp.cos(theta)*w)).subs(self.structure.subs).evalf()
         # k_sc_unit=(self.R*( sp.sin(theta)*u+sp.cos(theta)*w)).subs(self.structure.subs).evalf()
         k_in_unit=(self.R*(-sp.sin(theta)*u+sp.cos(theta)*w)).subs(self.structure.lattice_par_val).evalf()
