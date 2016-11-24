@@ -2,10 +2,63 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3cf8941a-4671-424d-93c4-26a4d1da4571" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test5.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MgO.py" afterPath="$PROJECT_DIR$/MgO.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reflectivity.py" afterPath="$PROJECT_DIR$/reflectivity.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test12.py" afterPath="$PROJECT_DIR$/test12.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/dynXRD/.gitignore" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/BaTiO3.py" afterPath="$PROJECT_DIR$/dynXRD/tests/crystals/BaTiO3.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/LiNbO3.py" afterPath="$PROJECT_DIR$/dynXRD/tests/crystals/LiNbO3.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/LiNbO3coordinates.dat" afterPath="$PROJECT_DIR$/dynXRD/tests/crystals/LiNbO3coordinates.dat" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/MgO.py" afterPath="$PROJECT_DIR$/dynXRD/tests/crystals/MgO.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/aux_pyasf.py" afterPath="$PROJECT_DIR$/dynXRD/aux_pyasf.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/aux_xraylib.py" afterPath="$PROJECT_DIR$/dynXRD/aux_xraylib.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/cif/1507756.cif" afterPath="$PROJECT_DIR$/dynXRD/tests/cif/1507756.cif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/cif/1512124.cif" afterPath="$PROJECT_DIR$/dynXRD/tests/cif/1512124.cif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/cif/2104737.cif" afterPath="$PROJECT_DIR$/dynXRD/tests/cif/2104737.cif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/cif/Diamond9008564.cif" afterPath="$PROJECT_DIR$/dynXRD/tests/cif/Diamond9008564.cif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/cif/GaAs9008845.cif" afterPath="$PROJECT_DIR$/dynXRD/tests/cif/GaAs9008845.cif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/cif/Ge7101739.cif" afterPath="$PROJECT_DIR$/dynXRD/tests/cif/Ge7101739.cif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/cif/LiNbO3_28294.cif" afterPath="$PROJECT_DIR$/dynXRD/tests/cif/LiNbO3_28294.cif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/cif/MgO1000053.cif" afterPath="$PROJECT_DIR$/dynXRD/tests/cif/MgO1000053.cif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/cif/MgO_52026.cif" afterPath="$PROJECT_DIR$/dynXRD/tests/cif/MgO_52026.cif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/cif/MgO_9863.cif" afterPath="$PROJECT_DIR$/dynXRD/tests/cif/MgO_9863.cif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/cif/Si2104737.cif" afterPath="$PROJECT_DIR$/dynXRD/tests/cif/Si2104737.cif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/reflectivity.py" afterPath="$PROJECT_DIR$/dynXRD/reflectivity.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test1.dat" afterPath="$PROJECT_DIR$/dynXRD/tests/test1.dat" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test1.py" afterPath="$PROJECT_DIR$/dynXRD/tests/test1.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test10.dat" afterPath="$PROJECT_DIR$/dynXRD/tests/test10.dat" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test10.py" afterPath="$PROJECT_DIR$/dynXRD/tests/test10.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test11.dat" afterPath="$PROJECT_DIR$/dynXRD/tests/test11.dat" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test11.py" afterPath="$PROJECT_DIR$/dynXRD/tests/test11.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test12.dat" afterPath="$PROJECT_DIR$/dynXRD/tests/test12.dat" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test12.py" afterPath="$PROJECT_DIR$/dynXRD/tests/test12.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test13.dat" afterPath="$PROJECT_DIR$/dynXRD/tests/test13.dat" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test13.py" afterPath="$PROJECT_DIR$/dynXRD/tests/test13.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test14.dat" afterPath="$PROJECT_DIR$/dynXRD/tests/test14.dat" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test14.py" afterPath="$PROJECT_DIR$/dynXRD/tests/test14.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test2.dat" afterPath="$PROJECT_DIR$/dynXRD/tests/test2.dat" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test2.py" afterPath="$PROJECT_DIR$/dynXRD/tests/test2.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test2_xraylib.py" afterPath="$PROJECT_DIR$/dynXRD/tests/test2_xraylib.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test3.dat" afterPath="$PROJECT_DIR$/dynXRD/tests/test3.dat" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test3.py" afterPath="$PROJECT_DIR$/dynXRD/tests/test3.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test4.dat" afterPath="$PROJECT_DIR$/dynXRD/tests/test4.dat" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test4.py" afterPath="$PROJECT_DIR$/dynXRD/tests/test4.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test5.dat" afterPath="$PROJECT_DIR$/dynXRD/tests/test5.dat" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test5.py" afterPath="$PROJECT_DIR$/dynXRD/tests/test5.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test6.dat" afterPath="$PROJECT_DIR$/dynXRD/tests/test6.dat" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test6.py" afterPath="$PROJECT_DIR$/dynXRD/tests/test6.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test7.dat" afterPath="$PROJECT_DIR$/dynXRD/tests/test7.dat" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test7.py" afterPath="$PROJECT_DIR$/dynXRD/tests/test7.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test8.dat" afterPath="$PROJECT_DIR$/dynXRD/tests/test8.dat" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test8.py" afterPath="$PROJECT_DIR$/dynXRD/tests/test8.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test9.dat" afterPath="$PROJECT_DIR$/dynXRD/tests/test9.dat" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test9.py" afterPath="$PROJECT_DIR$/dynXRD/tests/test9.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/testDiamond.py" afterPath="$PROJECT_DIR$/dynXRD/tests/testDiamond.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/testGaAs.py" afterPath="$PROJECT_DIR$/dynXRD/tests/testGaAs.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/testGe.py" afterPath="$PROJECT_DIR$/dynXRD/tests/testGe.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/testMgO.py" afterPath="$PROJECT_DIR$/dynXRD/tests/testMgO.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/testSi.py" afterPath="$PROJECT_DIR$/dynXRD/tests/testSi.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test_pyasf.py" afterPath="$PROJECT_DIR$/dynXRD/tests/test_pyasf.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test_xraylib.py" afterPath="$PROJECT_DIR$/dynXRD/tests/test_xraylib.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/__init__.py" afterPath="$PROJECT_DIR$/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="dynXRD.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,104 +81,76 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="reflectivity.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/reflectivity.py">
+      <file leaf-file-name="reflectivity.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dynXRD/reflectivity.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8803612" vertical-offset="2190" max-vertical-offset="5850">
-              <caret line="198" column="62" selection-start-line="198" selection-start-column="62" selection-end-line="198" selection-end-column="62" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test12.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test12.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="1065">
-              <caret line="53" column="44" selection-start-line="53" selection-start-column="17" selection-end-line="53" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test6.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test6.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="855">
-              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5865">
+              <caret line="188" column="18" selection-start-line="188" selection-start-column="18" selection-end-line="188" selection-end-column="18" />
               <folding>
-                <element signature="e#92#111#0" expanded="true" />
+                <element signature="e#43#61#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test5.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test5.py">
+      <file leaf-file-name="aux_xraylib.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dynXRD/aux_xraylib.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="930">
-              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1680">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <element signature="e#92#111#0" expanded="true" />
+                <element signature="e#37#51#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="setup.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/setup.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
+              <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="test4.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test4.py">
+        <entry file="file://$PROJECT_DIR$/dynXRD/tests/test4.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="840">
-              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="21" selection-end-column="33" />
-              <folding>
-                <element signature="e#92#111#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test3.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test3.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="840">
-              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="21" selection-end-column="33" />
-              <folding>
-                <element signature="e#92#111#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test1.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test1.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="780">
-              <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-              <folding>
-                <element signature="e#92#111#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test1.dat" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test1.dat">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="5109" max-vertical-offset="6090">
-              <caret line="400" column="36" selection-start-line="400" selection-start-column="36" selection-end-line="400" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="795">
+              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="24" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test13.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test13.py">
+      <file leaf-file-name="testSi.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dynXRD/tests/testSi.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
-              <caret line="19" column="13" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="33" />
-              <folding>
-                <element signature="e#92#111#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.37459284" vertical-offset="0" max-vertical-offset="921">
+              <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test3.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dynXRD/tests/test3.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="885">
+              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="24" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test1.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dynXRD/tests/test1.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="825">
+              <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -175,6 +200,9 @@
         <option value="$PROJECT_DIR$/test1.dat" />
         <option value="$PROJECT_DIR$/test1.py" />
         <option value="$PROJECT_DIR$/reflectivity.py" />
+        <option value="$PROJECT_DIR$/dynXRD/reflectivity.py" />
+        <option value="$PROJECT_DIR$/dynXRD/setup.py" />
+        <option value="$PROJECT_DIR$/setup.py" />
       </list>
     </option>
   </component>
@@ -210,6 +238,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -238,13 +267,30 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="cif" />
+              <option name="myItemId" value="dynXRD" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dynXRD" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dynXRD" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dynXRD" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -264,6 +310,13 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/" />
+      <recent name="$PROJECT_DIR$/dynXRD/tests" />
+      <recent name="$PROJECT_DIR$/tests" />
+      <recent name="$PROJECT_DIR$/dynXRD/tests/crystals" />
+      <recent name="$PROJECT_DIR$/dynXRD/" />
+    </key>
   </component>
   <component name="RunManager" selected="Python.testSi">
     <configuration default="false" name="testSi" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -278,7 +331,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="dynXRD" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testSi.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dynXRD/tests/testSi.py" />
       <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
@@ -430,23 +483,23 @@
     <frame x="65" y="24" width="1615" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21671827" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21671827" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33123028" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -463,9 +516,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21671827" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33123028" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -490,17 +543,41 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/testSi.py">
+    <entry file="file://$PROJECT_DIR$/dynXRD/reflectivity.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="924" max-vertical-offset="5850">
+          <caret line="187" column="18" selection-start-line="187" selection-start-column="18" selection-end-line="187" selection-end-column="18" />
           <folding>
-            <element signature="e#116#135#0" expanded="false" />
+            <element signature="e#43#61#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test14.dat">
+    <entry file="file://$PROJECT_DIR$/dynXRD/tests/test4.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="840">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="21" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dynXRD/tests/test3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="840">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="21" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dynXRD/tests/test1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="780">
+          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dynXRD/tests/test14.dat">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.92244226" vertical-offset="6941" max-vertical-offset="7590">
           <caret line="500" column="36" selection-start-line="500" selection-start-column="36" selection-end-line="500" selection-end-column="36" />
@@ -508,7 +585,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test2.dat">
+    <entry file="file://$PROJECT_DIR$/dynXRD/tests/test2.dat">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6782178" vertical-offset="6924" max-vertical-offset="7590">
           <caret line="489" column="36" selection-start-line="489" selection-start-column="36" selection-end-line="489" selection-end-column="36" />
@@ -516,17 +593,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test2.py">
+    <entry file="file://$PROJECT_DIR$/dynXRD/tests/test2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7425743" vertical-offset="0" max-vertical-offset="945">
           <caret line="30" column="57" selection-start-line="30" selection-start-column="57" selection-end-line="30" selection-end-column="57" />
-          <folding>
-            <element signature="e#92#111#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test7.dat">
+    <entry file="file://$PROJECT_DIR$/dynXRD/tests/test7.dat">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="6924" max-vertical-offset="7590">
           <caret line="500" column="36" selection-start-line="500" selection-start-column="36" selection-end-line="500" selection-end-column="36" />
@@ -534,17 +609,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test7.py">
+    <entry file="file://$PROJECT_DIR$/dynXRD/tests/test7.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="354" max-vertical-offset="960">
           <caret line="44" column="43" selection-start-line="44" selection-start-column="37" selection-end-line="44" selection-end-column="43" />
-          <folding>
-            <element signature="e#89#108#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test8.dat">
+    <entry file="file://$PROJECT_DIR$/dynXRD/tests/test8.dat">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="6924" max-vertical-offset="7590">
           <caret line="500" column="36" selection-start-line="500" selection-start-column="36" selection-end-line="500" selection-end-column="36" />
@@ -552,7 +625,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MgO.py">
+    <entry file="file://$PROJECT_DIR$/dynXRD/tests/crystals/MgO.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1755">
           <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
@@ -560,7 +633,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cif/MgO_52026.cif">
+    <entry file="file://$PROJECT_DIR$/dynXRD/tests/cif/MgO_52026.cif">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.7125645" vertical-offset="3319" max-vertical-offset="3900">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -568,7 +641,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cif/1507756.cif">
+    <entry file="file://$PROJECT_DIR$/dynXRD/tests/cif/1507756.cif">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.83168316" vertical-offset="684" max-vertical-offset="1290">
           <caret line="12" column="8" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="12" />
@@ -576,17 +649,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test8.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="840">
-          <caret line="44" column="55" selection-start-line="44" selection-start-column="55" selection-end-line="44" selection-end-column="55" />
-          <folding>
-            <element signature="e#92#111#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BaTiO3.py">
+    <entry file="file://$PROJECT_DIR$/dynXRD/tests/crystals/BaTiO3.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
           <caret line="15" column="92" selection-start-line="15" selection-start-column="92" selection-end-line="15" selection-end-column="92" />
@@ -594,7 +657,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aux_pyasf.py">
+    <entry file="file://$PROJECT_DIR$/dynXRD/aux_pyasf.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -602,25 +665,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aux_xraylib.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1009" max-vertical-offset="1590">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test14.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1050">
-          <caret line="38" column="78" selection-start-line="38" selection-start-column="63" selection-end-line="38" selection-end-column="78" />
-          <folding>
-            <element signature="e#92#105#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test11.dat">
+    <entry file="file://$PROJECT_DIR$/dynXRD/tests/test11.dat">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="6924" max-vertical-offset="7590">
           <caret line="500" column="36" selection-start-line="500" selection-start-column="36" selection-end-line="500" selection-end-column="36" />
@@ -628,7 +673,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cif/LiNbO3_28294.cif">
+    <entry file="file://$PROJECT_DIR$/dynXRD/tests/cif/LiNbO3_28294.cif">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="392" max-vertical-offset="1350">
           <caret line="34" column="22" selection-start-line="34" selection-start-column="15" selection-end-line="34" selection-end-column="22" />
@@ -636,7 +681,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LiNbO3.py">
+    <entry file="file://$PROJECT_DIR$/dynXRD/tests/crystals/LiNbO3.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
           <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
@@ -644,7 +689,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LiNbO3coordinates.dat">
+    <entry file="file://$PROJECT_DIR$/dynXRD/tests/crystals/LiNbO3coordinates.dat">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.30981067" vertical-offset="0" max-vertical-offset="581">
           <caret line="12" column="66" selection-start-line="12" selection-start-column="66" selection-end-line="12" selection-end-column="66" />
@@ -652,7 +697,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testMgO.py">
+    <entry file="file://$PROJECT_DIR$/dynXRD/tests/testMgO.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="174" max-vertical-offset="870">
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="23" selection-end-column="31" />
@@ -660,7 +705,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test13.dat">
+    <entry file="file://$PROJECT_DIR$/dynXRD/tests/test13.dat">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="6924" max-vertical-offset="7590">
           <caret line="500" column="36" selection-start-line="500" selection-start-column="36" selection-end-line="500" selection-end-column="36" />
@@ -668,7 +713,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test11.py">
+    <entry file="file://$PROJECT_DIR$/dynXRD/tests/test11.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="339" max-vertical-offset="945">
           <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="45" />
@@ -676,7 +721,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test10.dat">
+    <entry file="file://$PROJECT_DIR$/dynXRD/tests/test10.dat">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7590">
           <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
@@ -684,17 +729,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test10.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32178217" vertical-offset="270" max-vertical-offset="900">
-          <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
-          <folding>
-            <element signature="e#92#111#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test9.dat">
+    <entry file="file://$PROJECT_DIR$/dynXRD/tests/test9.dat">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.9674267" vertical-offset="6609" max-vertical-offset="7590">
           <caret line="500" column="36" selection-start-line="500" selection-start-column="36" selection-end-line="500" selection-end-column="36" />
@@ -702,17 +737,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test9.py">
+    <entry file="file://$PROJECT_DIR$/dynXRD/tests/test9.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.104234524" vertical-offset="69" max-vertical-offset="990">
           <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
-          <folding>
-            <element signature="e#92#111#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test6.dat">
+    <entry file="file://$PROJECT_DIR$/dynXRD/tests/test6.dat">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="6609" max-vertical-offset="7590">
           <caret line="500" column="36" selection-start-line="500" selection-start-column="36" selection-end-line="500" selection-end-column="36" />
@@ -720,17 +753,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test13.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="33" />
-          <folding>
-            <element signature="e#92#111#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test5.dat">
+    <entry file="file://$PROJECT_DIR$/dynXRD/tests/test5.dat">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="6609" max-vertical-offset="7590">
           <caret line="500" column="36" selection-start-line="500" selection-start-column="36" selection-end-line="500" selection-end-column="36" />
@@ -738,35 +761,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test12.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="1065">
-          <caret line="53" column="44" selection-start-line="53" selection-start-column="17" selection-end-line="53" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test6.py">
+    <entry file="file://$PROJECT_DIR$/dynXRD/tests/test6.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="855">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="31" />
-          <folding>
-            <element signature="e#92#111#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test5.py">
+    <entry file="file://$PROJECT_DIR$/dynXRD/tests/test5.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="930">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="31" />
-          <folding>
-            <element signature="e#92#111#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test4.dat">
+    <entry file="file://$PROJECT_DIR$/dynXRD/tests/test4.dat">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="6609" max-vertical-offset="7590">
           <caret line="451" column="36" selection-start-line="451" selection-start-column="36" selection-end-line="451" selection-end-column="36" />
@@ -774,17 +785,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test4.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="840">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="21" selection-end-column="33" />
-          <folding>
-            <element signature="e#92#111#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test3.dat">
+    <entry file="file://$PROJECT_DIR$/dynXRD/tests/test3.dat">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.18566775" vertical-offset="6609" max-vertical-offset="7590">
           <caret line="452" column="36" selection-start-line="452" selection-start-column="36" selection-end-line="452" selection-end-column="36" />
@@ -792,17 +793,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test3.py">
+    <entry file="file://$PROJECT_DIR$/dynXRD/tests/test3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="840">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="21" selection-end-column="33" />
-          <folding>
-            <element signature="e#92#111#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="885">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="24" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test1.dat">
+    <entry file="file://$PROJECT_DIR$/dynXRD/tests/test1.dat">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="5109" max-vertical-offset="6090">
           <caret line="400" column="36" selection-start-line="400" selection-start-column="36" selection-end-line="400" selection-end-column="36" />
@@ -810,20 +809,110 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test1.py">
+    <entry file="file://$PROJECT_DIR$/dynXRD/tests/test1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="780">
-          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="825">
+          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.7169604" vertical-offset="3375" max-vertical-offset="12510">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="921">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dynXRD/tests/test13.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
+          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dynXRD/tests/test14.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47882736" vertical-offset="129" max-vertical-offset="1050">
+          <caret line="38" column="78" selection-start-line="38" selection-start-column="63" selection-end-line="38" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dynXRD/aux_xraylib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1009" max-vertical-offset="1590">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#92#111#0" expanded="true" />
+            <element signature="e#37#51#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reflectivity.py">
+    <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8803612" vertical-offset="2190" max-vertical-offset="5850">
-          <caret line="198" column="62" selection-start-line="198" selection-start-column="62" selection-end-line="198" selection-end-column="62" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
+          <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dynXRD/reflectivity.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5865">
+          <caret line="188" column="18" selection-start-line="188" selection-start-column="18" selection-end-line="188" selection-end-column="18" />
+          <folding>
+            <element signature="e#43#61#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dynXRD/tests/test12.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5928339" vertical-offset="189" max-vertical-offset="1110">
+          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dynXRD/tests/test10.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42345276" vertical-offset="0" max-vertical-offset="921">
+          <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dynXRD/tests/test8.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6188925" vertical-offset="0" max-vertical-offset="921">
+          <caret line="44" column="35" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dynXRD/tests/test4.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="885">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="24" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dynXRD/tests/testSi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37459284" vertical-offset="0" max-vertical-offset="921">
+          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
           <folding />
         </state>
       </provider>

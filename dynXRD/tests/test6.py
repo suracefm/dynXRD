@@ -1,11 +1,14 @@
 # import os
 # os.chdir(os.path.expanduser("~/Desktop/reflectivity/dynXRD/"))
 # import pyasf
-import reflectivity
 import sympy as sp
+
 import pylab as pl
-import MgO
+
+from dynXRD import reflectivity
 import aux_xraylib as auxfunc
+from dynXRD.tests.crystals import MgO
+
 
 data = pl.loadtxt("test6.dat")
 data[:,0] = pl.radians(data[:,0])
@@ -17,15 +20,15 @@ Energy=10000
 
 #struct = pyasf.unit_cell("1011117")
 # struct = pyasf.unit_cell("cif/MgO_52026.cif") #MgO
-struct=MgO.structure_MgO()
+struct= MgO.structure_MgO()
 cryst = auxfunc.crystal(struct)
-Sub=reflectivity.Substrate(cryst)
+Sub= reflectivity.Substrate(cryst)
 v_par=sp.Matrix([1,-1,0])
 v_perp=sp.Matrix([1,1,0])
 Sub.calc_orientation(v_par, v_perp)
-layer1=reflectivity.Epitaxial_Layer(cryst, thickness)
+layer1= reflectivity.Epitaxial_Layer(cryst, thickness)
 layer1.calc_orientation(v_par, v_perp)
-crystal=reflectivity.Sample(Sub, layer1)
+crystal= reflectivity.Sample(Sub, layer1)
 crystal.set_Miller(R)
 crystal.calc_g0_gH(Energy)
 thBragg= float(layer1.calc_Bragg_angle(Energy).subs(layer1.structure.lattice_par_val).evalf())

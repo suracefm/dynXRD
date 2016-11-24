@@ -1,8 +1,7 @@
 import sys
+
 sys.path.append("/home/federica/Documenti/gitrep/dynXRD/")
 import pyasf
-import reflectivity
-import sympy as sp
 #import matplotlib
 
 

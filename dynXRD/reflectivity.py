@@ -1,5 +1,4 @@
 #import pyasf
-import aux_xraylib as auxfunc
 #import aux_pyasf as auxfunc
 import numpy as np
 import sympy as sp
@@ -7,6 +6,8 @@ import sympy as sp
 
 # def get_crystal(element):
 #     return auxfunc.get_crystal(element)
+from dynXRD import aux_xraylib as auxfunc
+
 
 def crystal(element):
     struct=auxfunc.get_crystal(element)
