@@ -33,7 +33,7 @@ crystal= reflectivity.Sample(Sub, layer1)
 crystal.set_Miller(R)
 crystal.calc_g0_gH(Energy)
 
-angle=np.linspace(0.98, 1.02,501)*float(layer1.calc_Bragg_angle(Energy).subs(layer1.structure.lattice_par_val).evalf())
+angle=np.linspace(0.998, 1.002,501)*float(layer1.calc_Bragg_angle(Energy).subs(layer1.structure.lattice_par_val).evalf())
 
 XR=crystal.calc_reflectivity(angle, Energy)
 layer1.calc_amplitudes(angle, Energy)
@@ -47,7 +47,7 @@ XT = layer1.XT
 #pl.plot(*data.T)
 #pl.plot(angle,abs(XT)**2)
 
-pl.plot(angle,abs(XRl)**2)
+pl.plot(np.degrees(angle),abs(XR)**2)
 #pl.plot(angle,1 - abs(XT)**2 - abs(XRl)**2)
 pl.show()
 

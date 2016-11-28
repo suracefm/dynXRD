@@ -6,7 +6,7 @@ import sympy as sp
 import pylab as pl
 
 from dynXRD import reflectivity
-import aux_xraylib as auxfunc
+import dynXRD.aux_xraylib as auxfunc
 from dynXRD.tests.crystals import MgO
 
 
@@ -46,12 +46,13 @@ angle=pl.linspace(0.99, 1.01,501)*thBragg
 XR=crystal.calc_reflectivity(angle, Energy)
 crystal.print_values(angle, Energy)
 
-pl.plot(data[:,0], data[:,1])
+pl.plot(data[:,0], data[:,1], label='GID_sl', color='red')
 # pl.plot(angle-thBragg,abs(XT)**2)
 # pl.plot(angle-thBragg,abs(XRl)**2)
 # pl.plot(angle-thBragg,1 - abs(XT)**2 - abs(XRl)**2)
-pl.plot(angle-thBragg,abs(XR)**2)
+pl.plot(angle-thBragg,abs(XR)**2, label='dynXRD', color='black')
 #pl.plot(angle-thBragg,abs(XRs)**2)
 #pl.plot(angle-thBragg,abs(XRl)**2)
 pl.yscale('log')
+pl.legend(loc="upper left", prop={'size':19})
 pl.show()

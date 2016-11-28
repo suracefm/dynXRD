@@ -14,7 +14,7 @@ from dynXRD import reflectivity
 
 
 
-#import aux_pyasf as auxfunc
+import dynXRD.aux_xraylib as auxfunc
 
 #data = pl.loadtxt("MgO_100nm_002.dat")
 #data[:,0] = pl.radians(data[:,0])

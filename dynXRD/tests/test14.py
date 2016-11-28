@@ -5,7 +5,7 @@ import sympy as sp
 
 import pylab as pl
 
-import aux_xraylib as auxfunc
+import dynXRD.aux_xraylib as auxfunc
 from dynXRD import reflectivity
 from dynXRD.tests.crystals import BaTiO3
 

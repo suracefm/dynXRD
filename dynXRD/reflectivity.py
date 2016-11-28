@@ -39,9 +39,8 @@ class Sample(object):
             Recq=RM.T * H.subs(self.substrate.structure.lattice_par_val).evalf()
             Hl=([int(round(element)) for element in Recq])
             dotprod=np.array(list(map((lambda a, b: a*b), Hl, Recq)))
-            cos=np.sum(dotprod)/(np.linalg.norm(np.array(Hl))*Recq.norm())
-            #print(Recq, Hl, cos)
-            assert abs(cos-1.0)<0.0001, 'The vectors H from the substrate and the layer must be parallel'
+            # cos=np.sum(dotprod)/(np.linalg.norm(np.array(Hl))*Recq.norm())
+            # assert abs(cos-1.0)<0.0001, 'The vectors H from the substrate and the layer must be parallel'
             layer.Miller=Hl
 
 

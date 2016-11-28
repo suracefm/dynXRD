@@ -11,7 +11,7 @@ from dynXRD import reflectivity
 
 
 #import matplotlib.pyplot as pl
-#import xraylib
+import dynXRD.aux_xraylib as auxfunc
 from dynXRD.tests.crystals import MgO
 
 data = pl.loadtxt("test12.dat")

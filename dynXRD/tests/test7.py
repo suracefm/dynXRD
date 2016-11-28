@@ -6,7 +6,7 @@ import sympy as sp
 import pylab as pl
 
 from dynXRD import reflectivity
-import aux_xraylib as auxfunc
+import dynXRD.aux_xraylib as auxfunc
 from dynXRD.tests.crystals import MgO
 
 
